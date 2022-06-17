@@ -6,7 +6,12 @@ nav{
     padding-top: .5rem;
     padding-bottom: .5rem;
 }
-
+.nav-link{
+    color: white;
+}
+.nav-link:hover{
+    padding: 7px 0;
+}
 nav .navbar-collapse.collapse{
     display: block;
 }
@@ -23,3 +28,7 @@ nav .navbar-collapse{
     transition: .6s all ease-in-out;
     height: 0 !important;
 }
+
+.navbar-inverse.navbar-nav>li>a:hover {
+    background: grey;
+} 
