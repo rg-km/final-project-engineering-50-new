@@ -23,19 +23,22 @@ export default class Navbar extends Component {
               <div className={ this.state.show ? "collapse navbar-collapse" : "collapse navbar-collapse active" }>
                 <div className="navbar-nav ms-auto">
                 <li className="nav-item">
-                  <Link className="nav-link text-light " to='/' >Home</Link>
+                  <Link className="nav-link text-light " to='/' >HOME</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link text-light" to='/product' >Product</Link>
+                  <Link className="nav-link text-light" to='/IISMA' >IISMA CAMP</Link>
                   </li>
                   <li className="nav-item">
-                  <Link className="nav-link text-light " to='/testimoni' >Testimoni</Link>
+                  <Link className="nav-link text-light " to='/fyp' >#FYP</Link>
                   </li>
                   <li className="nav-item">
-                  <Link className="nav-link text-light" to='/aboutus' >AboutUs</Link>
+                  <Link className="nav-link text-light " to='/COMPANYcamp' >COMPANY CAMP</Link>
                   </li>
                   <li className="nav-item">
-                  <Link className="nav-link text-light" to='/signin' >Sign in</Link>
+                  <Link className="nav-link text-light" to='/aboutus' >ABOUT US</Link>
+                  </li>
+                  <li className="nav-item">
+                  <Link className="nav-link text-light" to='/signin' >SIGN IN</Link>
                   </li>
                 </div>
               </div>
