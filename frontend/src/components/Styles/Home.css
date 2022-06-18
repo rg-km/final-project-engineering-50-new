@@ -7,7 +7,6 @@
 }
 
 .info-panel img{
-    
     height: 300px;
     width: 300px;
     margin-top: -10px;
@@ -22,7 +21,7 @@
 
 .text-body{
     color: black;
-    font-size:smaller;
+    font-size:smaller; 
     padding: 30px;
     text-align: center;
 }
@@ -30,26 +29,27 @@
 .our-panel {
     background-color: #FFFFFF;
     border-radius: 10px;
-    height: 1140px;
+    height: 1030px;
     width: 440px;
-    padding: 20px;
+
+}
+.card-text{
+    padding: 4px;
+    color: rgb(0, 0, 0);
+    font-size: smaller;
 }
 
 .our-panel img {
-    height: 350px;
-    width: 350px;
-    margin-top: -20px;
-    margin-left: 20px;
-    -webkit-transition: all 0.3s ease;
+    height: 300px;
+    width: 300px;
+    transition: .2s;
 }
 
 .our-panel img:hover {
     height: 350px;
     width: 350px;
-    margin-top: -40px;
-    margin-bottom: 40px;
-    margin-left: 20px;
-    transform: scale(1.01);
+    margin:auto;
+    transform-origin: scale(1.01);
 }
 
 .col-lg {
@@ -65,14 +65,12 @@
 
 .bima {
     background-color:#ECE4FD;
-    margin-top: -7px;
-    margin-left: 60px;
     border-radius: 12px;
     height: 490px;
     width: 300px;
 }
 
-.bima img{
+.bima img {
     margin-top: 20px;
     margin-left: 50px;
     border-radius: 12px;
@@ -80,10 +78,8 @@
     width: 200px;
 }
 
-.Al {
-    margin-left: 60px;
+ .Al {
     background-color:#ECE4FD;
-    margin-top: -7px;
     border-radius: 12px;
     height: 490px;
     width: 300px;
@@ -99,9 +95,7 @@
 
 .Enggar {
     font-size: 14px;
-    margin-left: 60px;
     background-color:#ECE4FD;
-    margin-top: -7px;
     border-radius: 12px;
     height: 490px;
     width: 300px;
@@ -113,6 +107,41 @@
     border-radius: 12px;
     height: 250px;
     width: 200px;
+}
+@media (min-width: 768px) {
+    .our-panel {
+        height: 690px;
+    }
+    .our-panel img{
+        transition: .3s;
+    }
+    .our-panel img:hover{
+        margin-top: -23px;
+        margin-left: -5px;
+        transform: scale(.80);
+    }
+    .testi-panel{
+        height: 1110px;
+    }
+
+    .bima {
+        margin-left: 20px;
+        border-radius: 12px;
+        height: 490px;
+        width: 300px;
+    }
+    .Al {
+        margin-left: 15px;
+        border-radius: 12px;
+        height: 490px;
+        width: 300px;
+    }
+    .Enggar {
+        margin-left: 20px;
+        border-radius: 12px;
+        height: 490px;
+        width: 300px;
+    }
 }
 
 @media (min-width: 991px) {
@@ -130,26 +159,21 @@
         float: right;
     }
     .our-panel{
-        height: 400px;
+        height: 360px;
         width: 440px;
-        margin-left: 0px;
     }
     .our-panel img {
-        height: 350px;
-        width: 350px;
-        margin-top: -20px;
-        margin-left: 20px;
-        -webkit-transition: all 0.3s ease;
+        transition: .3s;
+        height: 300px;
+        width: 300px;
     }
     
     .our-panel img:hover {
-        height: 350px;
-        width: 350px;
-        margin-top: -40px;
-        margin-bottom: 40px;
-        margin-left: 20px;
-        transform: scale(1.01);
+        margin-top: -30px;
+        margin-left: -1px;
+        transform: scale(.80);
     }
+
     .text-head{
         text-align: left;
         padding: 10px;
@@ -161,32 +185,26 @@
         text-align: left;
         padding: 40px;
     }
-
     .testi-panel{
         height: 550px;
         width: 440px;
     }
 
     .bima {
-        background-color:#ECE4FD;
-        margin-top: -7px;
-        margin-left: 60px;
-        border-radius: 12px;
+        margin-left: 0px;
         height: 490px;
         width: 300px;
     }
-    
-    .bima img{
-        margin-top: 20px;
-        margin-left: 50px;
-        border-radius: 12px;
-        height: 250px;
-        width: 200px;
+    .Al{
+        margin-left: -1px;
+        height: 490px;
+        width: 300px;
+    }
+    .Enggar {
+        margin-left: -2px;
+        height: 490px;
+        width: 300px;
     }
 
 
 }
-    
-
-
-    
