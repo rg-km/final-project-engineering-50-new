@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/home/Home';
 import AboutUs from './components/home/AboutUs';
-import Product from './components/home/Product';
+import IISMA from './components/home/IismaCamp';
 import Testimoni from './components/home/Testimoni';
 import LoginPage from './components/Login/Login';
 import RegisterPage from './components/Register/Register';
@@ -22,7 +22,7 @@ function App() {
             <Route>
               <Route path="/" element={<Home />} />
               <Route path="/aboutus" element={<AboutUs />} />
-              <Route path="/product" element={<Product />} />
+              <Route path="/IISMA" element={<IISMA />} />
               <Route path="/testimoni" element={<Testimoni />} />
               <Route path="/signin" element={<LoginPage/>} />
               <Route path="/register" element={<RegisterPage/>} />
