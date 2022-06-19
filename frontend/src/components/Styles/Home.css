@@ -180,8 +180,8 @@
     font-size: xx-large;
   }
   .text-body {
-    font-size: x-large;
-    text-align: left;
+    font-size: x-large !important;
+    text-align: left !important;
     padding: 40px;
   }
   .testi-panel {
