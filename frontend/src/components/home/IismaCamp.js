@@ -13,7 +13,6 @@ import announcement2 from "../Assets/announcement2.png";
 import Onboarding from "../Assets/Onboarding.png";
 import camp from "../Assets/camp.png";
 
-
 const IISMA = () => {
   return (
     <div className="container">
@@ -34,7 +33,7 @@ const IISMA = () => {
               </p>
               <div className="btn-group">
                 <Link to="/cart">
-                    <button class="btn btn-dark btn-lg ">Daftar</button>
+                  <button class="btn btn-dark btn-lg ">Daftar</button>
                 </Link>
               </div>
             </div>
@@ -105,9 +104,6 @@ const IISMA = () => {
           <div className="text-head text-center">
             <h2 className="rata-text">Registrasi</h2>
           </div>
-          {/* <div className="tgl text-center">
-            <p className="rata-text">1-15 Agustus 2020</p>
-          </div> */}
         </div>
         <div className="col-12 col-lg-4 col-md-6 mt-5">
           <div className="text-center">
@@ -116,9 +112,6 @@ const IISMA = () => {
           <div className="text-head text-center">
             <h2 className="rata-text">Seleksi Administrasi</h2>
           </div>
-          {/* <div className="tgl text-center">
-            <p>16-25 Agustus 2020</p>
-          </div> */}
         </div>
         <div className="col-12 col-lg-4 col-md-6 mt-5">
           <div className="text-center">
@@ -127,9 +120,7 @@ const IISMA = () => {
           <div className="text-head text-center">
             <h2 className="rata-text">Pengumuman Administrasi</h2>
           </div>
-          {/* <div className="tgl text-center">
-            <p>26 Agustus 2020</p>
-          </div> */}
+          
         </div>
         <div className="col-12 col-lg-4 col-md-6 mt-5">
           <div className="text-center">
@@ -138,9 +129,6 @@ const IISMA = () => {
           <div className="text-head text-center">
             <h2 className="rata-text">Wawancara</h2>
           </div>
-          {/* <div className="tgl text-center">
-            <p className="rata-text">27-30 Agustus 2020</p>
-          </div> */}
         </div>
         <div className="col-12 col-lg-4 col-md-6 mt-5">
           <div className="text-center">
@@ -149,9 +137,6 @@ const IISMA = () => {
           <div className="text-head text-center">
             <h2 className="rata-text">Pengumuman Akhir</h2>
           </div>
-          {/* <div className="tgl text-center">
-            <p>2 September 2020</p>
-          </div> */}
         </div>
         <div className="col-12 col-lg-4 col-md-6 mt-5">
           <div className="text-center">
@@ -160,9 +145,6 @@ const IISMA = () => {
           <div className="text-head text-center">
             <h2 className="rata-text">On Boarding</h2>
           </div>
-          {/* <div className="tgl text-center">
-            <p className="rata-text">7 September 2020</p>
-          </div> */}
         </div>
         <div className="col-12 col-lg-4 col-md-6 mt-5">
           <div className="text-center">
@@ -171,9 +153,6 @@ const IISMA = () => {
           <div className="text-head text-center">
             <h2 className="rata-text">IISMA-CAMP Progam Batch 1</h2>
           </div>
-          {/* <div className="tgl text-center">
-            <p>8 September - 1 Oktober 2020</p>
-          </div> */}
         </div>
       </div>
     </div>
