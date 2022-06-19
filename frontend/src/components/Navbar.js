@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
+import cart from './Assets/cart.png';
 
 export default class Navbar extends Component { 
     constructor() {
@@ -38,8 +39,12 @@ export default class Navbar extends Component {
                   <Link className="nav-link text-light" to='/aboutus' >ABOUT US</Link>
                   </li>
                   <li className="nav-item">
+                  <Link className="nav-link text-light" to='/cart' ><img src={cart} width='20'/></Link>
+                  </li>
+                  <li className="nav-item">
                   <Link className="nav-link text-light" to='/signin' >SIGN IN</Link>
                   </li>
+                  
                 </div>
               </div>
             </div>
