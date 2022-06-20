@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import './css/bootstrap.min.css';
 import Navbar from './components/Navbar';
-
+import Footer from './components/Footer';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/home/Home';
 import AboutUs from './components/home/AboutUs';
@@ -32,6 +32,7 @@ function App() {
               <Route path="/FYP" element={<FYP />} />
             </Route>
           </Routes>
+      <Footer />
    
     
     </div>
