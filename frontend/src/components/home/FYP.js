@@ -23,7 +23,7 @@ const FYP = () => {
               dan masih banyak lagi yang bisa didapetin untuk mencari tahu awal langkah kita loh.<br/>
               <b>Ayo segera daftarkan diri kamu !!</b>
               </p>
-              <button className="btn btn-secondary btn-md">Register</button>
+              <button className="btn btn-secondary btn-md">Find My Path</button>
             </div>
           </div>
         </div>
