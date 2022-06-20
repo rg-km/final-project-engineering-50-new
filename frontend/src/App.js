@@ -12,6 +12,7 @@ import LoginPage from './components/Login/Login';
 import RegisterPage from './components/Register/Register';
 import ForgotPassword from './components/ForgotPassword/ForgotPas';
 import ResetPassword from './components/ResetPassword/ResetPas';
+import FYP from './components/home/FYP';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               <Route path="/register" element={<RegisterPage/>} />
               <Route path="/forgotPassword" element={<ForgotPassword/>} />
               <Route path="/resetPassword/:token" element={<ResetPassword/>}/>
+              <Route path="/FYP" element={<FYP />} />
             </Route>
           </Routes>
    
