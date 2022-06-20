@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import './css/bootstrap.min.css';
 import Navbar from './components/Navbar';
-
+import Footer from './components/Footer';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/home/Home';
 import AboutUs from './components/home/AboutUs';
@@ -15,6 +15,7 @@ import ResetPassword from './components/ResetPassword/ResetPas';
 import Cart from './components/Cart/Cart';
 import { CartProvider } from 'react-use-cart';
 import PageProduct from './components/Cart/PageProduct';
+import FYP from './components/home/FYP';
 
 function App() {
   return (
@@ -32,8 +33,10 @@ function App() {
               <Route path="/forgotPassword" element={<ForgotPassword/>} />
               <Route path="/resetPassword/:token" element={<ResetPassword/>}/>
               <Route path="/cart" element={<CartProvider><PageProduct/><Cart/></CartProvider>} />
+              <Route path="/FYP" element={<FYP />} />
             </Route>
           </Routes>
+      <Footer />
    
     
     </div>
