@@ -20,7 +20,7 @@ const IISMA = () => {
         <div className="col-lg col-md iisma-panel">
           <div className="row">
             <div className="col-lg-5 col-md-12 mt-3">
-              <h2 className="text-head">IISMA-CAMP</h2>
+              <h2 className="text-head ">IISMA-CAMP</h2>
               <div className="text-center">
                 <img src={require("../Assets/iisma-2.png")} class="image3" alt="iisma" />
               </div>

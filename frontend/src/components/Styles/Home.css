@@ -1,6 +1,7 @@
 .info-panel {
-  background-color: #efefeff7;
+  background-color: #efefeff7 !important;
   align-items: center;
+  padding: 20px;
   border-radius: 10px;
   height: 500px;
   width: 440px;
@@ -13,7 +14,9 @@
   margin-left: 40px;
 }
 .text-head {
-  text-align: center;
+  text-align: center !important;
+  margin-left: 0px !important;
+  margin-top: -30px !important;
   color: #531cb9;
   padding: 10px;
   font-size: x-large;
@@ -33,9 +36,10 @@
   width: 440px;
 }
 .card-text {
-  padding: 4px;
+  padding: 5px;
+  margin-top: 10px;
   color: rgb(0, 0, 0);
-  font-size: smaller;
+  font-size: smaller !important;
 }
 
 .our-panel img {
@@ -108,6 +112,18 @@
   width: 200px;
 }
 @media (min-width: 768px) {
+  .info-panel{
+    padding: 0px;
+  }
+  .text-head {
+    text-align: center !important;
+    margin-left: 0px !important;
+    margin-top: -10px !important;
+    color: #531cb9;
+    padding: 10px;
+    font-size: x-large;
+  }
+  
   .our-panel {
     height: 690px;
   }
@@ -145,7 +161,7 @@
 
 @media (min-width: 991px) {
   .info-panel {
-    height: 350px;
+    height: 400px !important;
     width: 440px;
     margin-top: 10px;
   }
@@ -153,7 +169,7 @@
   .info-panel img {
     height: 300px;
     width: 300px;
-    margin-top: -80px;
+    margin-top: -70px;
     margin-right: 50px;
     float: right;
   }
@@ -174,8 +190,8 @@
   }
 
   .text-head {
-    text-align: left;
-    padding: 10px;
+    text-align: left !important;
+    padding: 20px !important;
     margin-left: 30px;
     font-size: xx-large;
   }
