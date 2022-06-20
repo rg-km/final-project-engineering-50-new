@@ -13,6 +13,7 @@ import RegisterPage from './components/Register/Register';
 import ForgotPassword from './components/ForgotPassword/ForgotPas';
 import ResetPassword from './components/ResetPassword/ResetPas';
 import FYP from './components/home/FYP';
+import Companycamp from './components/home/Companycamp';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route path="/forgotPassword" element={<ForgotPassword/>} />
               <Route path="/resetPassword/:token" element={<ResetPassword/>}/>
               <Route path="/FYP" element={<FYP />} />
+              <Route path="/Companycamp" element={<Companycamp/>} />
             </Route>
           </Routes>
       <Footer />
