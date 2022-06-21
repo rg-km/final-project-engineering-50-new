@@ -9,17 +9,29 @@ import axios from 'axios'
 const LoginPage = () => {
 
     const[email,setEmail] = useState('');
+    const[errorEmail,setErrorEmail] = useState('');
     const[password,setPassword] = useState('');
+    const[errorPassword,setErrorPassword] = useState('');
     const[redirect, setRedirect] = useState(false)
     const[error,setError] = useState('');
 
     const onChangeEmail =(e) =>{
         const value = e.target.value 
         setEmail(value)
+        if(!value){
+            setErrorEmail('Email tidak boleh kosong')
+        } else{
+            setErrorEmail('')
+        }
     }
     const onChangePassword = (e) =>{
         const value = e.target.value
         setPassword(value)
+        if(!value){
+            setErrorPassword('Password tidak boleh kosong')
+        } else{
+            setErrorPassword('')
+        }
     }
     const submitLogin = () =>{
         const data ={
@@ -27,6 +39,13 @@ const LoginPage = () => {
             password: password
         }
         // console.log(data)
+        if(!email){
+            setError('Email tidak boleh kosong!')
+        } else if (!password) {
+            setError('Password tidak boleh kosong!')
+        } else if (!email && !password){
+            setError('Email dan Password tidak boleh kosong!')
+        } else{
         axios.post('http://localhost:3001/signin', data)
         .then(result =>{
             if(result){
@@ -40,6 +59,7 @@ const LoginPage = () => {
         .catch(e =>{
             setError(e.response.data.message)
         })
+    }
     }
 
     return (
@@ -73,9 +93,19 @@ const LoginPage = () => {
                                             <Form>
                                                 <div className="mb-3">
                                                     <input id="inputEmail" type="email" placeholder="Email address" required="" autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4 form-bg" value={email} onChange={onChangeEmail}/>
+                                                    {
+                                                        errorEmail && (
+                                                            <p className="text-danger">{errorEmail}</p>
+                                                        )
+                                                    }
                                                 </div>
                                                 <div className="mb-3">
                                                     <input id="inputPassword" type="password" placeholder="Password" required="" className="form-control rounded-pill border-0 shadow-sm px-4 text-primary form-bg" value={password} onChange={onChangePassword}/>
+                                                    {
+                                                        errorPassword && (
+                                                            <p className="text-danger">{errorPassword}</p>
+                                                        )
+                                                    }
                                                 </div>
                                                 <div className="text-right d-flex justify-content-between mt-4">
                                                     <Link to="/forgotPassword">Forgot Password</Link>
