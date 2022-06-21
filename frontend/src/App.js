@@ -16,6 +16,7 @@ import Cart from './components/Cart/Cart';
 import { CartProvider } from 'react-use-cart';
 import PageProduct from './components/Cart/PageProduct';
 import FYP from './components/home/FYP';
+import Companycamp from './components/home/Companycamp';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
               <Route path="/resetPassword/:token" element={<ResetPassword/>}/>
               <Route path="/cart" element={<CartProvider><PageProduct/><Cart/></CartProvider>} />
               <Route path="/FYP" element={<FYP />} />
+              <Route path="/Companycamp" element={<Companycamp/>} />
             </Route>
           </Routes>
       <Footer />
