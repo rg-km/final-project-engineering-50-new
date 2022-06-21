@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import "../Styles/IISMA.css";
 import relation from "../Assets/iisma-relation.png";
@@ -12,8 +12,15 @@ import wawancara from "../Assets/wawancara.png";
 import announcement2 from "../Assets/announcement2.png";
 import Onboarding from "../Assets/Onboarding.png";
 import camp from "../Assets/camp.png";
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 const IISMA = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <div className="container">
       <div className="row justify-content-center mt-4 mb-4">
@@ -32,9 +39,33 @@ const IISMA = () => {
                 <b> Ayooo buruan daftar sebelum kehabisan!!!!.</b>
               </p>
               <div className="btn-group">
-                <Link to="/cart">
-                  <button class="btn btn-dark btn-lg ">Daftar</button>
-                </Link>
+                  <button class="btn btn-dark btn-lg " onClick={handleShow}>Daftar</button>
+                <Modal show={show} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Form Daftar IISMA</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <Form>
+                      <Form.Group
+                        className="mb-3"
+                        controlId="exampleForm.ControlTextarea1"
+                      >
+                        <Form.Label>Motivasi</Form.Label>
+                        <Form.Control as="textarea" rows={3} />
+                      </Form.Group>
+                    </Form>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="danger" onClick={handleClose}>
+                      Batal
+                    </Button>
+                    <Link to = "/cart">
+                      <Button variant="primary" onClick={handleClose}>
+                        Daftar
+                      </Button>
+                    </Link>
+                  </Modal.Footer>
+                </Modal>
               </div>
             </div>
           </div>
