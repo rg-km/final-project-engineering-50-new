@@ -1,6 +1,5 @@
 .AboutUs{
-    background:  #ECE4FD;
-    height: 100vh !important ;
+    height: 195vh !important ;
 
 }
 .info-panell{
@@ -62,6 +61,10 @@
 }
 
 @media (min-width: 768px) {
+    .AboutUs{
+        height: 199vh !important ;
+    
+    }
     .info-panell{
         background-color: blueviolet;
         align-items: center;
@@ -172,6 +175,63 @@
     }
 }
 @media (min-width: 992px) {
+    .info-panell{
+        background-color: blueviolet;
+        align-items: center;
+        border-radius: 10px;
+      
+    }
+    .goals-panel{
+        background-color:#a38bd9;
+        border-radius: 10px;
+        height: 350px;
+        width: 440px;
+    }
+    .scholarship{
+        background-color: #9d74da;
+        color: white;
+        border-radius: 10px;
+        height: 250px;
+        width: 200px;
+        margin-top: -7px;
+        margin-left: 140px; 
+    }
+    
+    .icons{
+        font-size: 90px;
+        text-align: center;
+   
+    }
+    .col-lg {
+        margin-top: 2rem;  
+    }
+    
+    .career{
+        background-color: #9d74da;
+        color: white;
+        border-radius: 10px;
+        height: 250px;
+        width: 200px;
+        margin-left: 80px;
+        margin-top: -7px; 
+    }
+    
+    
+    .skilldevelopment{
+        background-color: #9d74da;
+        color: white;
+        border-radius: 10px;
+        height: 250px;
+        width: 200px;
+        margin-left: 20px;
+        margin-top: -7px; 
+    }
+}
+
+@media (min-width: 1047px) {
+    .AboutUs{
+        height: 98vh !important ;
+    }
     .info-panell{
         background-color: blueviolet;
         align-items: center;
