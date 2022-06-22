@@ -33,49 +33,41 @@ func main() {
 		password TEXT,
 		);
 
-		//CREATE TABLE IF NOT EXISTS pendaftaran (
-		//id INTEGER PRIMARY KEY AUTOINCREMENT,
-		//id_aimprove TEXT,
-		//id_user TEXT,
-		//tanggal_daftar TEXT,
-		//status TEXT,
-		//);
+		CREATE TABLE IF NOT EXISTS pendaftaran (
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		id_aimprove TEXT,
+		id_user TEXT,
+		tanggal_daftar TEXT,
+		status TEXT,
+		);
 
-		//CREATE TABLE IF NOT EXISTS camp (
-		//id INTEGER PRIMARY KEY AUTOINCREMENT,
-		//nama_camp TEXT,
-		//email TEXT,
-		//payment TEXT,
-		//status TEXT,
-		//);
+		CREATE TABLE IF NOT EXISTS cart (
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+	    pembayaran TEXT,
+		motivasi TEXT,
+		);
 
-		//CREATE TABLE IF NOT EXISTS iisma (
-		//id INTEGER PRIMARY KEY AUTOINCREMENT,
-		//penjelasan_iisma TEXT,
-		//booklet_unilist TEXT,
-		//info_iisma TEXT,
-		//);
+		CREATE TABLE IF NOT EXISTS iisma (
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		penjelasan_iisma TEXT,
+		booklet_unilist TEXT,
+		info_iisma TEXT,
+		);
 
-		//CREATE TABLE IF NOT EXISTS company (
-		//id INTEGER PRIMARY KEY AUTOINCREMENT,
-		//penjelasan_company TEXT,
-		//booklet_companylist TEXT,
-		//info_company TEXT,
-		//);
+		CREATE TABLE IF NOT EXISTS company (
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		penjelasan_company TEXT,
+		booklet_companylist TEXT,
+		info_company TEXT,
+		);
 
-		//CREATE TABLE IF NOT EXISTS fyp (
-		//id INTEGER PRIMARY KEY AUTOINCREMENT,
-		//penjelasan_fyp TEXT,
-		//booklet_fyplist TEXT,
-		//info_fyp TEXT,
-		//);
+		CREATE TABLE IF NOT EXISTS fyp (
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		penjelasan_fyp TEXT,
+		booklet_fyplist TEXT,
+		info_fyp TEXT,
+		);
 
-		//CREATE TABLE IF NOT EXISTS social_media (
-		//id INTEGER PRIMARY KEY AUTOINCREMENT,
-		//instagram LINK,
-		//linkedin LINK,
-		//facebook LINK,
-		//);
 	
 		INSERT INTO user (nama_lengkap, nomor_telpon, tempat_tanggal_lahir, alamat, pendidikan, email, password)
 		VALUES ('Rahma', '0812', 'Jakarta-2001-01-01', 'Pamulang', 'S1-Informatika-Universitas-Indonesia', 'ex@gmail.com', '192837465');

@@ -19,7 +19,7 @@ func(r *FypRepository) GetAll() ([]Fyp, error) {
 	defer rows.Close()
 	for rows.Next() {
 		var b Fyp
-		err := rows.Scan(&b.Id, &b.PenjelasanFyp, &b.BookletFyp, &b.InfoFyp)
+		err := rows.Scan(&b.Id, &b.PenjelasanFyp, &b.BookletFyplist, &b.InfoFyp)
 		if err != nil {
 			return nil, err
 		}
@@ -30,7 +30,7 @@ func(r *FypRepository) GetAll() ([]Fyp, error) {
 
 func (r *FypRepository) GetById(id int64) (Fyp, error) {
 	var b Fyp
-	err := r.db.QueryRow("SELECT * FROM Fyp WHERE id = ?", id).Scan(&b.Id, &b.PenjelasanFyp, &b.BookletFyp, &b.InfoFyp)
+	err := r.db.QueryRow("SELECT * FROM Fyp WHERE id = ?", id).Scan(&b.Id, &b.PenjelasanFyp, &b.BookletFyplist, &b.InfoFyp)
 	if err != nil {
 		return b, err
 	}
