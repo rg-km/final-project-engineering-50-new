@@ -1,9 +1,12 @@
 package main
 
 import (
-	"final-project-engineering-50/login-regist/repository"
-	"final-project-engineering-50/login-regist/api"
 	"database/sql"
+	"Backend/repository"
+	"Backend/api"
+
+	database
+	
 	
 	_ "github.com/mattn/go-sqlite3"
 )
@@ -16,6 +19,11 @@ func main(){
 
 	userRepo := repository.NewUserRepository(db)
 	aimproveRepo := repository.NewAimproveRepository(db)
-	mainApi := api.NewApi(*userRepo, *aimproveRepo)
+	cartRepo := repository.NewCampRepository(db)
+	iismaRepo := repository.NewIismaRepository(db)
+	companyRepo := repository.NewCompanyRepository(db)
+	fypRepo := repository.NewFypRepository(db)
+	mainApi := api.NewApi(*userRepo, *aimproveRepo, *cartRepo, *iismaRepo, *companyRepo, *fypRepo)
+
 	mainApi.Start() 
 }
