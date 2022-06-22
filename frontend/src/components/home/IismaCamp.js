@@ -38,7 +38,6 @@ const IISMA = () => {
                 akan mendapatkan berbagai pengalaman IISMA di beberapa negara langsung dari peserta IISMA sebelumnya dan tentu saja dengan tips and triknya loooohh. <br />
                 <b> Ayooo buruan daftar sebelum kehabisan!!!!.</b>
               </p>
-              
               <div className="btn-group">
                   <button class="btn btn-dark btn-lg " onClick={handleShow}>Daftar</button>
                 <Modal show={show} onHide={handleClose}>
