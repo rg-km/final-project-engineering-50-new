@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState} from "react";
+import {useNavigate} from "react-router-dom";
 import "../Styles/IISMA.css";
 import relation from "../Assets/iisma-relation.png";
 import tips from "../Assets/iisma-tips.png";
@@ -22,10 +22,9 @@ const IISMA = () => {
   const [motivasi, setMotivasi] = useState('');
   const [errorMotivasi, setErrorMotivasi] = useState('');
   const [error, setError] = useState('');
-  const[redirect, setRedirect] = useState(false)
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  const navigate = useNavigate();
   const onChangeMotivasi = (e) => {
     const value = e.target.value
     setMotivasi(value)
@@ -35,14 +34,7 @@ const IISMA = () => {
       setErrorMotivasi('')
     }
   }
-  const onChangeDaftar = () =>{
-    if ({submitDaftar}){
-        redirect && (
-          <Link to ="/cart"/>
-        )
-    }
-  }
-  const submitDaftar = () =>{
+  const submitDaftar = (e) =>{
     const data ={
       motivasi:motivasi
     }
@@ -50,19 +42,21 @@ const IISMA = () => {
     if(!motivasi){
       setError('Motivasi tidak boleh kosong!')
     } else{
+      e.preventDefault()
+      navigate('/cart');
       axios.post('http://localhost:3001/IISMA', data)
       .then(result =>{
         if(result){
-          localStorage.setItem('token', result.data.token)
-          setRedirect(true)
-        }
+           localStorage.setItem('token', result.data.token)
+         }
 
         //console.log(result)
       })
-      .catch(e =>{
-        setError(e.response.data.message)
-      })
+       .catch(e =>{
+         setError(e.response.data.message)
+       })
     }
+    
   }
 
   return (
@@ -88,7 +82,7 @@ const IISMA = () => {
                 Ada yang tau program IISMA ?? Masih bingung ingin memasuki univ apa ?? nah kalian dateng diwaktu yang tepat kenapaa?? karena aimprove sedang menjalankan project baru bernama IISMA Camp dengan kuota terbatas, disini kalian
                 akan mendapatkan berbagai pengalaman IISMA di beberapa negara langsung dari peserta IISMA sebelumnya dan tentu saja dengan tips and triknya loooohh. <br />
                 <b> Ayooo buruan daftar sebelum kehabisan!!!!.</b>
-              </p>                
+              </p>
                   <div className="btn-group">
                       <button class="btn btn-dark btn-lg " onClick={handleShow}>Daftar</button>
                     <Modal show={show} onHide={handleClose}>
@@ -116,7 +110,7 @@ const IISMA = () => {
                         <Button variant="danger" onClick={handleClose}>
                           Batal
                         </Button>
-                          <Button variant="primary" onClick={onChangeDaftar}>
+                          <Button variant="primary" onClick={submitDaftar}>
                             Daftar
                           </Button>
                       </Modal.Footer>
