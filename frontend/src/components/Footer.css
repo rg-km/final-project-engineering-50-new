@@ -2,7 +2,5 @@
     background-color: #efefeff7;
     align-items: center;
     border-radius: 10px;
- 
-    left: 0;
-    bottom: 0;
+    padding-bottom: 0px;
 }
