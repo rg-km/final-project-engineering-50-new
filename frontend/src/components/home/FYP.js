@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import "../Styles/FYP.css";
 import Image1 from "../Assets/FYP.png";
 import Image2 from "../Assets/activities-fyp.jpg";
@@ -10,40 +10,38 @@ import Image6 from "../Assets/networking-fyp.jpg";
 const FYP = () => {
   return (
     <div className="container">
-      <div className="row justify-content-center mt-5 mb-4">
-        <div className="col-lg col-md info-panel">
-          <div className="row">
-            <div className="col-lg col-md-6 mt-3">
-              <h1 className="text-head">#FYP (Find Your Path)</h1>
-              <img src={Image1} class="rounded float-start mt-2" alt="FYP" />
-              <p>Kalian pernah gak sih mengalami kebingungan dalam berkembang?<br/>
+      <div className="row justify-content-center mt-10 mb-4">
+        <div className="col-lg col-md fyp-panel">
+          <div className='row'>
+            <div className='col-lg-5 col-md-12'>
+              <h1 className='text-head text-left'>#FYP (Find Your Path)</h1>
+              <img src={Image1} class="fyp-img" alt="FYP" />
+            </div>
+            <div className='text-fyp col-lg-7 col-md-12'>
+            Kalian pernah gak sih mengalami kebingungan dalam berkembang?<br/>
               Diumur yang sudah tidak muda lagi kita semua pasti pernah dihadapi dengan situasi yang sulit dalam memilih passion yang biasa kita kenal dengan <i>quarter life crisis</i>.
               <br/>Nah! Bagi kalian yang masih bingung dan belum menemukan solusinya, AIMPROVE menawarkan solusi berupa konsultasi career dalam project <i>Find Your Path</i>, 
               disini kalian akan mendapatkan banyak sekali informasi seperti magang dimana, organisasi apa yang harus diikuti, seminar apa yang bisa jadi bekal bagus buat kalian kedepannya, 
               dan masih banyak lagi yang bisa didapetin untuk mencari tahu awal langkah kita loh.<br/>
               <b>Ayo segera daftarkan diri kamu !!</b>
-              </p>
-              <button className="btn btn-secondary btn-md">Find My Path</button>
             </div>
+
           </div>
         </div>
+      </div>
 
-          <div className="row">
-            <div className="col-lg">
-              <div>
-              <h1 className="text-head text-center">Activities</h1>
-              <ol className="act-fyp text-center">
-                <li>Webinars with experts</li>
-                <li>One-on-three mentorship</li>
-                <li>Sharing and consultation career</li>
-              </ol>
-              </div>
+      <div className='row'>
+        <h2 className='text-head-act'>Activities</h2>
+          <div className='text-act col-lg-5 col-md-12'>
+            Webinars with Experts<br/> One on Three Mentorship<br/> Sharing and Consultation Career
           </div>
+          <div className='col-lg-5 col-md-12 mt-4'>
+            <img src={Image2} class="act-img" alt="FYP" />
           </div>
+      </div>
 
-          
-            <div className="row justify-content-center my-3">
-              <h1 className="text-head text-center mt-4">What We Offer</h1>
+      <div className="row justify-content-center my-3">
+              <h2 className="text-head-act text-center mt-4">What We Offer</h2>
             <div className="col-12 col-lg-6 col-md-6 mt-5">
               <div className="card mx-auto shadow">
                 <div className="card-body ">
@@ -89,7 +87,8 @@ const FYP = () => {
             </div>
 
           </div>
-      </div>
+
+
     </div>
 
   )
