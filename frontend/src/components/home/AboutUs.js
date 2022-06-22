@@ -19,7 +19,7 @@ on self-development, <br/>  especially for students. Aimprove will be a bridge f
             <div className="col-lg goals-panel">
             <h2 className="section-tittle fw-bold text-light text-center ourgoals">Our Goals</h2>
           <div className="row">
-      <div className="col-lg">
+      <div className="col-lg-4 col-md mt-4">
       <div class="card shadow mb-5 scholarship">
       <div className="card-body">
         <h5 className="card-title text-center">SCHOLARSHIP</h5>
@@ -28,7 +28,7 @@ on self-development, <br/>  especially for students. Aimprove will be a bridge f
       </div>
       </div>
       </div>
-      <div className="col-lg">
+      <div className="col-lg-4 col-md mt-4">
       <div class="card shadow mb-5 career">
       <div className="card-body">
         <h5 className="card-title text-center">CAREER</h5>
@@ -37,7 +37,7 @@ on self-development, <br/>  especially for students. Aimprove will be a bridge f
       </div>
       </div>
       </div>
-      <div className="col-lg">
+      <div className="col-lg-4 col-md mt-4">
       <div class="card shadow mb-5 skilldevelopment">
       <div className="card-body">
         <h5 className="card-title text-center">SKILL DEVELOPMENT</h5>
