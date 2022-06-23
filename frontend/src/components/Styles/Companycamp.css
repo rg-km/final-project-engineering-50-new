@@ -1,40 +1,168 @@
-.info-panel{
-    background-color: #FFFF;
+.company-panel{
+    background-color: #e0d7f6;
     align-items: center;
     border-radius: 10px;
-    height: 500px;
+    height: 920px;
     width: 440px;
 }
-
-.col-lg{
-    margin-top: 2rem;
-}
-
-.head{
-    color: #531CB9;
+.text-head{
     text-align: left;
-    padding: 10px;
-    margin-left: 30px;
+    padding: 40px;
     font-size:xx-large ;
+    font-style: oblique;
     font-weight: bolder;
 }
-
-p{
-    text-align: left;
-    padding: 5px;
+.text-head-act{
+    text-align: center;
+    color: #531CB9;
+    padding: 30px;
+    font-size: xx-large ;
+    font-weight: bolder;
+}
+.text-act{
+    text-align: center;
     font-size: medium;
+    font-weight: bold;
+}
+.company-img{
+    align-items: left;
+    width: 350px;
+    height: 350px;
+    margin-left: 30px;
 }
 
-.btn{
-    align-items: center;
-    padding: 5px;
+.offer-img{
+    border-radius: 360px;
+    width: 300px;
+    margin-left: 55px;
 }
 
+
+.text-company{
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #e0d7f6;
+    height: 330px;
+    width: 440px;
+}
 .card-text{
     font-size: large;
 }
-
-.act-img{
+.offer-img{
     height: 260px;
-    width: 410px;
+}
+
+.btn-group .btn {
+    margin-top: 90px;
+    align-items: left;
+    margin-left: -250px;
+  }
+
+@media (min-width: 768px){
+    .company-panel{
+        background-color: #e0d7f6;
+        align-items: center;
+        border-radius: 10px;
+        height: 850px;
+        width: 440px;
+    }
+    .text-head{
+        text-align: left;
+        font-size:xx-large ;
+        font-style: oblique;
+        font-weight: bolder;
+        padding-top: 50px;
+    }
+    .text-head-act{
+        text-align: center;
+        color: #531CB9;
+        padding: 30px;
+        font-size: xx-large ;
+        font-weight: bolder;
+    }
+    .text-act{
+        padding-top: 20px;
+        text-align: center;
+        font-size: medium;
+        font-weight: bold;
+    }
+    .company-img{
+        align-items: center;
+        width: 350px;
+        height: 350px;
+        margin-left: 170px;
+    }
+    .offer-img{
+        border-radius: 360px;
+        width: 300px;
+        margin-left: 55px;
+    }
+    
+    
+    .text-company{
+        margin-top: 30px;
+    }
+
+    .btn-group .btn {
+        margin-top: 110px;
+        align-items: left;
+        margin-left: -250px;
+      }
+}
+
+@media (min-width: 991px){
+    .company-panel{
+        background-color: #e0d7f6;
+        align-items: center;
+        border-radius: 10px;
+        height: 500px;
+        width: 440px;
+    }
+    .text-head{
+        text-align: left;
+        font-size:xx-large ;
+        font-style: oblique;
+        font-weight: bolder;
+        padding-top: 50px;
+    }
+    .text-head-act{
+        text-align: center;
+        color: #531CB9;
+        padding: 30px;
+        font-size: xx-large ;
+        font-weight: bolder;
+    }
+    .company-img{
+        align-items: left;
+        width: 350px;
+        height: 350px;
+        margin-left: 20px;
+    }
+    .offer-img{
+        border-radius: 360px;
+        width: 300px;
+        margin-left: 55px;
+    }
+    
+    .text-company{
+        margin-top: 80px;
+    }
+
+    .card {
+        background-color: #e0d7f6;
+        height: 330px;
+        width: 440px;
+    }
+
+    .card-text{
+        font-size: large;
+    }
+
+    .btn-group .btn {
+        margin-top: 100px;
+        align-items: left;
+        margin-left: -250px;
+      }
 }
