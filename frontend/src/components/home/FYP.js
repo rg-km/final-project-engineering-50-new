@@ -61,7 +61,7 @@ const FYP = () => {
         <div className="col-lg col-md fyp-panel">
           <div className='row'>
             <div className='col-lg-5 col-md-12'>
-              <h1 className='text-head text-left'>#FYP (Find Your Path)</h1>
+              <h1 className='text-head-fyp'>#FYP (Find Your Path)</h1>
               <img src={Image1} class="fyp-img" alt="FYP" />
             </div>
             <div className='text-fyp col-lg-7 col-md-12 text-center'>
@@ -72,7 +72,7 @@ const FYP = () => {
               dan masih banyak lagi yang bisa didapetin untuk mencari tahu awal langkah kita loh.<br/>
               <b>Ayo segera daftarkan diri kamu !!</b>
 
-              <div className="btn-group">
+              <div className="klik-regist-fyp">
                       <button class="btn btn-dark btn-lg " onClick={handleShow}>Daftar</button>
                     <Modal show={show} onHide={handleClose}>
                       <Modal.Header closeButton>
@@ -114,7 +114,7 @@ const FYP = () => {
 
       <div className='row'>
         <h2 className='text-head-act'>Activities</h2>
-          <div className='text-act col-lg-5 col-md-12'>
+          <div className='text-body-act col-lg-5 col-md-12'>
             Webinars with Experts<br/> One on Three Mentorship<br/> Sharing and Consultation Career
           </div>
           <div className='col-lg-5 col-md-12 mt-4'>
@@ -125,10 +125,10 @@ const FYP = () => {
       <div className="row justify-content-center my-3">
               <h2 className="text-head-act text-center mt-4">What We Offer</h2>
             <div className="col-12 col-lg-6 col-md-6 mt-5">
-              <div className="card mx-auto shadow">
+              <div className="card-fyp mx-auto shadow">
                 <div className="card-body ">
                     <img src={Image3} className="offer-img text-center card-img" alt="module" />
-                    <p className="card-text text-center">
+                    <p className="card-text-fyp text-center">
                     <b>Exclusive Modules</b>
                     </p>
                 </div>
@@ -136,10 +136,10 @@ const FYP = () => {
             </div>
 
             <div className="col-12 col-lg-6 col-md-6 mt-5">
-              <div className="card mx-auto shadow">
+              <div className="card-fyp mx-auto shadow">
                 <div className="card-body ">
                     <img src={Image4} className="offer-img text-center card-img" alt="insight" />
-                    <p className="card-text text-center">
+                    <p className="card-text-fyp text-center">
                     <b>Exclusive Insights</b>
                     </p>
                 </div>
@@ -147,10 +147,10 @@ const FYP = () => {
             </div>
 
             <div className="col-12 col-lg-6 col-md-6 mt-5">
-              <div className="card mx-auto shadow">
+              <div className="card-fyp mx-auto shadow">
                 <div className="card-body ">
                     <img src={Image5} className="offer-img text-center card-img" alt="career" />
-                    <p className="card-text text-center">
+                    <p className="card-text-fyp text-center">
                     <b>Career Knowledge</b>
                     </p>
                   </div>
@@ -158,10 +158,10 @@ const FYP = () => {
             </div>
 
             <div className="col-12 col-lg-6 col-md-6 mt-5">
-              <div className="card mx-auto shadow">
+              <div className="card-fyp mx-auto shadow">
                 <div className="card-body ">
                     <img src={Image6} className="offer-img text-center card-img" alt="networking" />
-                    <p className="card-text text-center">
+                    <p className="card-text-fyp text-center">
                     <b>Networking</b>
                     </p>
                 </div>
