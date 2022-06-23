@@ -1,56 +1,173 @@
-.info-panel{
-    background-color: #FFFF;
+.fyp-panel{
+    background-color: #e0d7f6;
     align-items: center;
     border-radius: 10px;
-    height: 500px;
+    height: 920px;
     width: 440px;
 }
-
-.col-lg{
-    margin-top: 2rem;
-}
-
 .text-head{
     text-align: left;
-    padding: 10px;
-    margin-left: 30px;
+    padding: 40px;
     font-size:xx-large ;
     font-style: oblique;
     font-weight: bolder;
 }
-
-p{
-    text-align: left;
-    padding: 5px;
+.text-head-act{
+    text-align: center;
+    color: #531CB9;
+    padding: 30px;
+    font-size: xx-large ;
+    font-weight: bolder;
+}
+.text-act{
+    text-align: center;
     font-size: medium;
+    font-weight: bold;
 }
-
-.btn{
-    align-items: center;
-    padding: 5px;
+.fyp-img{
+    align-items: left;
+    width: 350px;
+    height: 350px;
+    margin-left: 30px;
 }
-
 .act-img{
-    height: 300px;
-    width: 300px;
+    border-radius: 360px;
     align-items: center;
+    margin-left: 50px;
+    width: 300px;
 }
 
-.act-fyp{
-    font-size: medium;
+.text-fyp{
+    margin-top: 20px;
 }
 
-.module {
-    background-color: #ffffff;
-    border-radius: 12px;
-    height: 310px;
+.card {
+    background-color: #e0d7f6;
+    height: 330px;
     width: 440px;
 }
-
 .card-text{
     font-size: large;
 }
-
 .offer-img{
     height: 260px;
+}
+
+.btn-group .btn {
+    margin-top: 90px;
+    align-items: left;
+    margin-left: -250px;
+  }
+
+@media (min-width: 768px){
+    .fyp-panel{
+        background-color: #e0d7f6;
+        align-items: center;
+        border-radius: 10px;
+        height: 850px;
+        width: 440px;
+    }
+    .text-head{
+        text-align: left;
+        font-size:xx-large ;
+        font-style: oblique;
+        font-weight: bolder;
+        padding-top: 50px;
+    }
+    .text-head-act{
+        text-align: center;
+        color: #531CB9;
+        padding: 30px;
+        font-size: xx-large ;
+        font-weight: bolder;
+    }
+    .text-act{
+        padding-top: 20px;
+        text-align: center;
+        font-size: medium;
+        font-weight: bold;
+    }
+    .fyp-img{
+        align-items: center;
+        width: 350px;
+        height: 350px;
+        margin-left: 170px;
+    }
+    .act-img{
+        border-radius: 360px;
+        align-items: center;
+        margin-left: 150px;
+        width: 300px;
+    }
+    
+    .text-fyp{
+        margin-top: 30px;
+    }
+
+    .btn-group .btn {
+        margin-top: 110px;
+        align-items: left;
+        margin-left: -250px;
+      }
+}
+
+@media (min-width: 991px){
+    .fyp-panel{
+        background-color: #e0d7f6;
+        align-items: center;
+        border-radius: 10px;
+        height: 500px;
+        width: 440px;
+    }
+    .text-head{
+        text-align: left;
+        font-size:xx-large ;
+        font-style: oblique;
+        font-weight: bolder;
+        padding-top: 50px;
+    }
+    .text-head-act{
+        text-align: center;
+        color: #531CB9;
+        padding: 30px;
+        font-size: xx-large ;
+        font-weight: bolder;
+    }
+    .text-act{
+        padding-top: 110px;
+        text-align: right;
+        font-size: medium;
+        font-weight: bold;
+    }
+    .fyp-img{
+        align-items: left;
+        width: 350px;
+        height: 350px;
+        margin-left: 20px;
+    }
+    .act-img{
+        border-radius: 360px;
+        align-items: left;
+        margin-left: 50px;
+    }
+    
+    .text-fyp{
+        margin-top: 80px;
+    }
+
+    .card {
+        background-color: #e0d7f6;
+        height: 330px;
+        width: 440px;
+    }
+
+    .card-text{
+        font-size: large;
+    }
+
+    .btn-group .btn {
+        margin-top: 100px;
+        align-items: left;
+        margin-left: -250px;
+      }
 }
