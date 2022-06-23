@@ -34,7 +34,7 @@
 .act-img{
     border-radius: 360px;
     align-items: center;
-    margin-left: 110px;
+    margin-left: 85px;
     width: 300px;
 }
 
@@ -51,6 +51,7 @@
 
 .card-text-fyp{
     font-size: large;
+    margin-top: 10px;
 }
 .offer-img{
     height: 260px;
@@ -118,11 +119,14 @@
     .card-text-fyp{
     font-size: large;
     text-align: center;
+    margin-top: 15px;
 }
     
     .offer-img{
         height: 220px !important;
         width: 220px !important;
+        margin-top: 10px;
+        margin-left: 48px !important;
     }
 
     .klik-regist-fyp {
@@ -187,8 +191,20 @@
       }
 
       .card-fyp {
-    background-color: #e0d7f6;
+    background-color: #e0d7f6 !important;
     height: 330px !important;
     width: 440px !important;
+}
+
+.offer-img{
+    height: 260px !important;
+    width: 290px !important;
+    margin-left: 58px !important;
+    margin-top: 5px;
+}
+    .card-text-fyp{
+    font-size: large;
+    text-align: center;
+    margin-top: 8px;
 }
 }

@@ -35,7 +35,7 @@
   font-size: larger;
 }
 .relation {
-  background-color: #ffffff;
+  background-color: #ffffff !important;
   border-radius: 12px;
   height: 310px;
   width: 440px;
@@ -47,7 +47,7 @@
   width: 170px;
 }
 .tips {
-  background-color: #ffffff;
+  background-color: #ffffff !important;
   border-radius: 12px;
   height: 310px;
   width: 440px;
@@ -60,7 +60,7 @@
   width: 170px;
 }
 .brain {
-  background-color: #ffffff;
+  background-color: #ffffff !important;
   border-radius: 12px;
   height: 310px;
   width: 440px;
@@ -73,7 +73,7 @@
   width: 170px;
 }
 .discuss {
-  background-color: #ffffff;
+  background-color: #ffffff !important;
   border-radius: 12px;
   height: 310px;
   width: 440px;
