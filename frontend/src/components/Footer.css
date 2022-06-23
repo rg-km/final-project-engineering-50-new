@@ -1,6 +1,25 @@
-#footerbg{
-    background-color: #efefeff7;
+.fixed-footer{
+    background-color: #ece4fd;
     align-items: center;
-    border-radius: 10px;
-    padding-bottom: 0px;
+    position: relative;  
 }
+.logo{
+    margin-top: 50px;
+}
+.text-footer{
+    font-size: small; 
+}
+.icons-footer{
+    font-size: 20px;
+    color: blueviolet;   
+}
+.block-footer{
+    background-color: rgba(0, 0, 0, 0.05);
+    bottom: 0px; 
+}
+.caption{
+    font-size: small;
+    font-style:italic
+    
+}
+
