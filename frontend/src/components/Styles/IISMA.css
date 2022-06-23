@@ -8,20 +8,20 @@
 .iisma-panel img {
   height: auto;
   width: 300px;
-  margin-top: 10px;
+  margin-top: -20px;
 }
 
 .body {
   font-size: smaller;
-  margin-top: -20px;
+  margin-top: -30px;
   padding: 20px;
   text-align: center;
   -webkit-text-stroke-color: black;
   -webkit-text-stroke-width: 0.23px;
 }
-.btn-group {
+.tombol-group {
   align-items: center;
-  margin-top: -20px;
+  margin-top: -20px !important;
 }
 .benefits .row {
   border-radius: 10px;
@@ -100,13 +100,16 @@
     padding: 20px;
   }
   .iisma-panel img {
-    margin-top: 20px;
+    margin-top: -20px;
+  }
+  .iism{
+    margin-top: -50px !important;
   }
   .body {
     padding: 37px;
     margin-top: -25px;
   }
-  .btn-group {
+  .tombol {
     align-items: center;
     margin-top: -35px;
   }
@@ -114,8 +117,8 @@
   .relation {
     background-color: #ffffff;
     border-radius: 12px;
-    height: 310px;
-    width: 350px;
+    height: 310px !important;
+    width: 350px !important;
   }
   .relation img {
     margin-top: 30px;
@@ -126,8 +129,8 @@
   .tips {
     background-color: #ffffff;
     border-radius: 12px;
-    height: 310px;
-    width: 350px;
+    height: 310px !important;
+    width: 350px !important;
   }
   .tips img {
     margin-top: 30px;
@@ -139,8 +142,8 @@
   .brain {
     background-color: #ffffff;
     border-radius: 12px;
-    height: 310px;
-    width: 350px;
+    height: 310px !important;
+    width: 350px !important;
   }
   .brain img {
     margin-top: 30px;
@@ -152,8 +155,8 @@
   .discuss {
     background-color: #ffffff;
     border-radius: 12px;
-    height: 310px;
-    width: 350px;
+    height: 310px !important;
+    width: 350px !important;
   }
   .discuss img {
     margin-top: 30px;
@@ -185,6 +188,9 @@
   }
   .iisma-panel img {
     margin-top: 60px;
+  }
+  .iism{
+    margin-top: 0px !important;
   }
   .body {
     padding: 50px;
