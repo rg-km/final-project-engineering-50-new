@@ -16,7 +16,7 @@ type API struct {
 	fypRepo      repository.FypRepository
 }
 
-func NewApi(userRepo repository.UserRepository, aimproveRepo repository.AimproveRepository, cartRepo repository.CartRepository , iismaRepo repository.IismaRepository,
+func NewApi(userRepo repository.UserRepository, aimproveRepo repository.AimproveRepository, cartRepo repository.CartRepository, iismaRepo repository.IismaRepository,
 	companyRepo repository.CompanyRepository, fypRepo repository.FypRepository) *API {
 	mux := http.NewServeMux()
 
