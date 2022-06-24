@@ -42,11 +42,11 @@ func (a *API) getAimprove(w http.ResponseWriter, r *http.Request) {
 	for _, b := range aimprove {
 		response.Aimprove = append(response.Aimprove, ListAimprovecamp{
 			Id: strconv.Itoa(int(b.Id)),
-			NamaLengkap: b.nama_lengkap, 
-			PilihanCamp: b.pilihan_camp, 
+			NamaLengkap: b.NamaLengkap, 
+			PilihanCamp: b.PilihanCamp, 
 			Pendidikan: b.Pendidikan, 
-			TanggalMulai: b.tanggal_mulai, 
-			TanggalSelesai: b.tanggal_selesai,
+			TanggalMulai: b.TanggalMulai, 
+			TanggalSelesai: b.TanggalSelesai,
 		})
 	}
 	

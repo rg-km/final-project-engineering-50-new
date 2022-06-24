@@ -1,15 +1,13 @@
-package main
+package migration
 
 import (
 	"database/sql"
-
-	_ "github.com/mattn/go-sqlite3"
 )
 
-func main() {
+func NewSQLite() (*sql.DB, error) {
 	db, err := sql.Open("sqlite3", "./aimprove.db")
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	_, err = db.Exec(`
@@ -19,7 +17,7 @@ func main() {
 		pendidikan TEXT,
 		pilihan_camp TEXT,
 		tanggal_mulai TEXT,
-		tanggal_selesai TEXT,
+		tanggal_selesai TEXT
 		);
 
 		CREATE TABLE IF NOT EXISTS user (
@@ -30,7 +28,7 @@ func main() {
 		alamat TEXT,
 		pendidikan TEXT,
 		email TEXT,
-		password TEXT,
+		password TEXT
 		);
 
 		CREATE TABLE IF NOT EXISTS pendaftaran (
@@ -38,34 +36,34 @@ func main() {
 		id_aimprove TEXT,
 		id_user TEXT,
 		tanggal_daftar TEXT,
-		status TEXT,
+		status TEXT
 		);
 
 		CREATE TABLE IF NOT EXISTS cart (
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 	    pembayaran TEXT,
-		motivasi TEXT,
+		motivasi TEXT
 		);
 
 		CREATE TABLE IF NOT EXISTS iisma (
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 		penjelasan_iisma TEXT,
 		booklet_unilist TEXT,
-		info_iisma TEXT,
+		info_iisma TEXT
 		);
 
 		CREATE TABLE IF NOT EXISTS company (
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 		penjelasan_company TEXT,
 		booklet_companylist TEXT,
-		info_company TEXT,
+		info_company TEXT
 		);
 
 		CREATE TABLE IF NOT EXISTS fyp (
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 		penjelasan_fyp TEXT,
 		booklet_fyplist TEXT,
-		info_fyp TEXT,
+		info_fyp TEXT
 		);
 
 	
@@ -77,6 +75,8 @@ func main() {
 		`)
 
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
+
+	return db, nil
 }
