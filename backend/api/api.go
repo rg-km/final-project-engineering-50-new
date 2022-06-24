@@ -1,28 +1,28 @@
 package api
 
 import (
-	"Backend/repository"
+	"backend/backend/repository"
 	"fmt"
 	"net/http"
 )
 
 type API struct {
-	mux *http.ServeMux
-	userRepo repository.UserRepository
+	mux          *http.ServeMux
+	userRepo     repository.UserRepository
 	aimproveRepo repository.AimproveRepository
-	cartRepo repository.IismaRepository
-	iismaRepo repository.IismaRepository
-	companyRepo repository.CompanyRepository
-	fypRepo repository.FypRepository
+	cartRepo     repository.CartRepository
+	iismaRepo    repository.IismaRepository
+	companyRepo  repository.CompanyRepository
+	fypRepo      repository.FypRepository
 }
 
-func NewApi(userRepo repository.UserRepository, aimproveRepo repository.AimproveRepository, cartRepo repository.CampRepository, iismaRepo repository.IismaRepository,
+func NewApi(userRepo repository.UserRepository, aimproveRepo repository.AimproveRepository, cartRepo repository.CartRepository , iismaRepo repository.IismaRepository,
 	companyRepo repository.CompanyRepository, fypRepo repository.FypRepository) *API {
 	mux := http.NewServeMux()
 
 	api := &API{
-		mux: mux,
-		userRepo: userRepo,
+		mux:          mux,
+		userRepo:     userRepo,
 		aimproveRepo: aimproveRepo,
 		cartRepo:     cartRepo,
 		iismaRepo:    iismaRepo,
@@ -40,11 +40,11 @@ func NewApi(userRepo repository.UserRepository, aimproveRepo repository.Aimprove
 	return api
 }
 
-func (api *API) Handler() *http.ServeMux{
+func (api *API) Handler() *http.ServeMux {
 	return api.mux
 }
 
-func (api *API) Start(){
+func (api *API) Start() {
 	fmt.Println("Server is running on port 8080")
 	http.ListenAndServe(":8080", api.Handler())
 }
