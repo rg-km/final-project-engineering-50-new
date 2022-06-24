@@ -11,9 +11,9 @@ type CartListErrorResponse struct {
 }
 
 type ListCart struct {
-	Id          string     `json:"id"`
-	Pembayaran    string    `json:"pembayaran"`
-	Motivasi       string    `json:"motivasi"`
+	Id         string `json:"id"`
+	Pembayaran string `json:"pembayaran"`
+	Motivasi   string `json:"motivasi"`
 }
 
 type CartListSuccessResponse struct {
@@ -27,7 +27,7 @@ func (a *API) getCart(w http.ResponseWriter, r *http.Request) {
 	response.Cart = make([]ListCart, 0)
 
 	cart, err := a.cartRepo.GetAll()
-	defer func(){
+	defer func() {
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
 			encoder.Encode(CartListErrorResponse{Error: err.Error()})
@@ -38,26 +38,26 @@ func (a *API) getCart(w http.ResponseWriter, r *http.Request) {
 	}
 	for _, b := range cart {
 		response.Cart = append(response.Cart, ListCart{
-			Id: strconv.Itoa(int(b.Id)),
-			Pembayaran : b.Pembayaran,
-			Motivasi : b.Motivasi,
+			Id:         strconv.Itoa(int(b.Id)),
+			Pembayaran: b.Pembayaran,
+			Motivasi:   b.Motivasi,
 		})
 	}
-	
+
 	encoder.Encode(response)
 }
 
 func (a *API) getCartById(w http.ResponseWriter, r *http.Request) {
 	encoder := json.NewEncoder(w)
 	w.Header().Set("Content-Type", "application/json")
-	response :=CartListSuccessResponse{}
+	response := CartListSuccessResponse{}
 	response.Cart = make([]ListCart, 0)
 
 	id := r.URL.Query().Get("id")
 	idInt, err := strconv.Atoi(id)
 
-	camp, err := a.cartRepo.GetById(int64(idInt))
-	defer func(){
+	cart, err := a.cartRepo.GetById(int64(idInt))
+	defer func() {
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
 			encoder.Encode(CartListErrorResponse{Error: err.Error()})
@@ -67,9 +67,9 @@ func (a *API) getCartById(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	response.Cart = append(response.Cart, ListCart{
-		Id: strconv.Itoa(int(camp.Id)),
-		Pembayaran : camp.Pembayaran,
-		Motivasi : camp.Motivasi,
+		Id:         strconv.Itoa(int(cart.Id)),
+		Pembayaran: cart.Pembayaran,
+		Motivasi:   cart.Motivasi,
 	})
 	encoder.Encode(response)
 }

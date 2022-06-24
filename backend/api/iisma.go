@@ -14,7 +14,7 @@ type ListIisma struct {
 	Id              string `json:"id"`
 	PenjelasanIisma string `json:"penjelasan_iisma"`
 	BookletUnilist  string `json:"booklet_unilist"`
-	InfoIisma       string `json:"info_iisma`
+	InfoIisma       string `json:"info_iisma"`
 }
 
 type IismaListSuccessResponse struct {
