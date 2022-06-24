@@ -38,8 +38,7 @@ function App() {
               <Route path="/Companycamp" element={<Companycamp/>} />
             </Route>
           </Routes>
-          <Footer>
-            
+          <Footer>          
           </Footer>
      
    
