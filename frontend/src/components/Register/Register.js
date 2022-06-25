@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import './Register.css';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate} from 'react-router-dom';
 import logo from '../Assets/aimprove.png';
 import {Form} from 'react-bootstrap';
 import axios from 'axios'
 
 
 const RegisterPage = () => {
+    const navigate = useNavigate();
     const[nama_lengkap,setNama] = useState('');
     const[errorNama,setErrorNama] = useState('');
     const[nomor_telpon,setNoTelp] = useState('');
@@ -94,7 +95,8 @@ const RegisterPage = () => {
             setErrorPassword('')
         }
     }
-    const clickRegis = () =>{
+    const clickRegis = (e) =>{
+        e.preventDefault()
         const data ={
             nama_lengkap: nama_lengkap,
             nomor_telpon: nomor_telpon,
@@ -130,6 +132,7 @@ const RegisterPage = () => {
                     setTimeout(() => {
                         setAlert('')
                     }, 3000)
+                    navigate("/signin")
                 }
             }
 
