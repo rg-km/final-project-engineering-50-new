@@ -21,7 +21,7 @@ type CompanyListSuccessResponse struct {
 	Company []ListCompany `json:"Company"`
 }
 
-func (a *API) getCareer(w http.ResponseWriter, r *http.Request) {
+func (a *API) getCompany(w http.ResponseWriter, r *http.Request) {
 	encoder := json.NewEncoder(w)
 	w.Header().Set("Content-Type", "application/json")
 	response := CompanyListSuccessResponse{}

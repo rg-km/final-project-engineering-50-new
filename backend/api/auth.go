@@ -9,18 +9,18 @@ import (
 )
 
 type User struct {
-	NamaLengkap string `json:"nama_lengkap"`
-	NomorTelpon string `json:"nomor_telpon"`
+	NamaLengkap        string `json:"nama_lengkap"`
+	NomorTelpon        string `json:"nomor_telpon"`
 	TempatTanggalLahir string `json:"tempat_tanggal_lahir"`
-	Alamat string `json:"Alamat"`
-	Pendidikan string `json:"pendidikan"`
-	Email string `json:"email"`
-	Password string `json:"password"`
+	Alamat             string `json:"Alamat"`
+	Pendidikan         string `json:"pendidikan"`
+	Email              string `json:"email"`
+	Password           string `json:"password"`
 }
 
 type LoginSuccessResponse struct {
 	Email string `json:"email"`
-	Token    string `json:"token"`
+	Token string `json:"token"`
 }
 
 type AuthErrorResponse struct {
@@ -66,11 +66,11 @@ func (api *API) login(w http.ResponseWriter, r *http.Request) {
 	}
 
 	http.SetCookie(w, &http.Cookie{
-		Name: "token",
-		Value: tokenString,
+		Name:    "token",
+		Value:   tokenString,
 		Expires: expTime,
 	})
-	
+
 	json.NewEncoder(w).Encode(LoginSuccessResponse{Email: res.Email, Token: tokenString})
 }
 
@@ -92,7 +92,7 @@ func (api *API) register(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(res)
 }
 
-func (api *API) logout(w http.ResponseWriter, r *http.Request){
+func (api *API) logout(w http.ResponseWriter, r *http.Request) {
 	api.AllowOrigin(w, r)
 	token, err := r.Cookie("token")
 	if err != nil {
@@ -108,12 +108,10 @@ func (api *API) logout(w http.ResponseWriter, r *http.Request){
 		return
 	}
 	c := http.Cookie{
-		Name: "token",
+		Name:   "token",
 		MaxAge: -1,
 	}
 	http.SetCookie(w, &c)
 	w.WriteHeader(http.StatusOK)
 	w.Write([]byte("logout success"))
 }
-
-	

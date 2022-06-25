@@ -11,14 +11,14 @@ type UserListErrorResponse struct {
 }
 
 type ListUser struct {
-	Id string `json:"id"`
-	NamaLengkap string `json:"nama_lengkap"`
-	NomorTelpon string `json:"nomor_telpon"`
+	Id                 string `json:"id"`
+	NamaLengkap        string `json:"nama_lengkap"`
+	NomorTelpon        string `json:"nomor_telpon"`
 	TempatTanggalLahir string `json:"tempat_tanggal_lahir"`
-	Alamat string `json:"alamat"`
-	Pendidikan string `json:"pendidikan"`
-	Email string `json:"email"`
-	Password string `json:"password"`
+	Alamat             string `json:"alamat"`
+	Pendidikan         string `json:"pendidikan"`
+	Email              string `json:"email"`
+	Password           string `json:"password"`
 }
 
 type UserListSuccessResponse struct {
@@ -32,7 +32,7 @@ func (a *API) getUser(w http.ResponseWriter, r *http.Request) {
 	response.User = make([]ListUser, 0)
 
 	User, err := a.userRepo.GetAll()
-	defer func(){
+	defer func() {
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
 			encoder.Encode(UserListErrorResponse{Error: err.Error()})
@@ -43,13 +43,13 @@ func (a *API) getUser(w http.ResponseWriter, r *http.Request) {
 	}
 	for _, s := range User {
 		response.User = append(response.User, ListUser{
-			Id :  strconv.Itoa(int(s.Id)),
-			NamaLengkap: s.NamaLengkap,
-			NomorTelpon: s.NomorTelpon,
+			Id:                 strconv.Itoa(int(s.Id)),
+			NamaLengkap:        s.Nama,
+			NomorTelpon:        s.NomorTelpon,
 			TempatTanggalLahir: s.TempatTanggalLahir,
-			Alamat: s.Alamat,
-			Pendidikan: s.Pendidikan,
-			Email: s.Email,
+			Alamat:             s.Alamat,
+			Pendidikan:         s.Pendidikan,
+			Email:              s.Email,
 		})
 	}
 	encoder.Encode(response)
@@ -63,7 +63,7 @@ func (a *API) getUserById(w http.ResponseWriter, r *http.Request) {
 
 	id, err := strconv.Atoi(r.URL.Query().Get("id"))
 	User, err := a.userRepo.GetById(int64(id))
-	defer func(){
+	defer func() {
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
 			encoder.Encode(UserListErrorResponse{Error: err.Error()})
@@ -73,14 +73,13 @@ func (a *API) getUserById(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	response.User = append(response.User, ListUser{
-		Id :  strconv.Itoa(int(User.Id)),
-		NamaLengkap: User.NamaLengkap,
-		NomorTelpon: User.NomorTelpon,
+		Id:                 strconv.Itoa(int(User.Id)),
+		NamaLengkap:        User.Nama,
+		NomorTelpon:        User.NomorTelpon,
 		TempatTanggalLahir: User.TempatTanggalLahir,
-		Alamat: User.Alamat,
-		Pendidikan: User.Pendidikan,
-		Email: User.Email,
-		
+		Alamat:             User.Alamat,
+		Pendidikan:         User.Pendidikan,
+		Email:              User.Email,
 	})
 	encoder.Encode(response)
 }

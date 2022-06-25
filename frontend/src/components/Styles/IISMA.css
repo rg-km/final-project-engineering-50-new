@@ -5,6 +5,9 @@
   height: 500px;
   width: 440px;
 }
+.iism{
+  margin-top: 0px !important;
+}
 .iisma-panel img {
   height: auto;
   width: 300px;
@@ -103,7 +106,7 @@
     margin-top: -20px;
   }
   .iism{
-    margin-top: -50px !important;
+    margin-top: -50px;
   }
   .body {
     padding: 37px;
