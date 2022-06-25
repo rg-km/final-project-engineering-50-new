@@ -25,6 +25,7 @@ const IISMA = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const navigate = useNavigate();
+  
   const onChangeMotivasi = (e) => {
     const value = e.target.value
     setMotivasi(value)
@@ -44,7 +45,7 @@ const IISMA = () => {
     } else{
       e.preventDefault()
       navigate('/cart');
-      axios.post('http://localhost:3001/IISMA', data)
+      axios.post('http://localhost:8080/api/aimprove', data)
       .then(result =>{
         if(result){
            localStorage.setItem('token', result.data.token)
