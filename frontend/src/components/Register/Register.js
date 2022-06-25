@@ -90,7 +90,7 @@ const RegisterPage = () => {
         } else if (!password) {
             setError('Password tidak boleh kosong!')
         } else{
-        axios.post('http://localhost:3001/register', data)
+        axios.post('http://localhost:8080/api/register', data)
         .then(result =>{
             if(result){
                 if(result.data){

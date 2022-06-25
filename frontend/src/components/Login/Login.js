@@ -1,13 +1,13 @@
 import React, {useState, Fragment} from 'react';
 import './Login.css';
-import { Link, Navigate} from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import logo from '../Assets/aimprove.png';
 import {Form} from 'react-bootstrap';
 import axios from 'axios'
 
 
 const LoginPage = () => {
-
+    const navigate = useNavigate();
     const[email,setEmail] = useState('');
     const[errorEmail,setErrorEmail] = useState('');
     const[password,setPassword] = useState('');
@@ -33,7 +33,8 @@ const LoginPage = () => {
             setErrorPassword('')
         }
     }
-    const submitLogin = () =>{
+    const submitLogin = (e) =>{
+        e.preventDefault()
         const data ={
             email: email,
             password: password
@@ -46,11 +47,14 @@ const LoginPage = () => {
         } else if (!email && !password){
             setError('Email dan Password tidak boleh kosong!')
         } else{
-        axios.post('http://localhost:3001/signin', data)
-        .then(result =>{
-            if(result){
+            console.log(data)
+            axios.post('http://localhost:8080/api/login', data)
+            .then(result =>{
+                console.log("bebas")
+                if(result){
                 localStorage.setItem('token', result.data.token)
-                setRedirect(true)
+                navigate("/")
+                // setRedirect(true)
             }
 
             // console.log(result)
@@ -65,11 +69,11 @@ const LoginPage = () => {
     return (
         <>
         <Fragment>
-            {
+            {/* {
                 redirect && (
                     <Navigate to="/"/>
                 )
-            }
+            } */}
             <div className="maincontainer">
                 <div className="container-fluid">
                     <div className="row no-gutter"> 
