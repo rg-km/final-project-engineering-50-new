@@ -1,0 +1,283 @@
+
+.info-panell{
+    background-color: blueviolet;
+    align-items: center;
+    border-radius: 10px;
+    height: 1200px ;
+    width: 440px ;
+   
+}
+.goals-panel{
+    background-color:#a38bd9 ;
+    align-items: center;
+    border-radius: 10px;
+    height: 986px ;
+    width: 440px  ;
+    
+}
+
+.scholarship{
+    background-color: #9d74da !important;
+    color: white;
+    border-radius: 10px;
+    height: 250px !important;
+    width: 200px !important;
+    margin-top: -7px ;
+    margin-left: 100px;
+ 
+}
+.icons{
+    font-size: 90px;
+    text-align: center;
+    color: white;
+}
+
+.col-lg {
+    margin-top: 2rem;  
+}
+
+.career{
+    background-color: #9d74da !important;
+    color: white;
+    border-radius: 10px;
+    height: 250px !important;
+    width: 200px !important;
+    margin-left: 100px;
+    margin-top: -7px; 
+}
+
+
+.skilldevelopment{
+    background-color: #9d74da !important;
+    color: white;
+    border-radius: 10px;
+    height: 250px !important;
+    width: 200px !important;
+    margin-left: 100px;
+    margin-top: -7px; 
+}
+
+@media (min-width: 768px) {
+    .AboutUs{
+        height: 199vh !important ;
+    
+    }
+    .info-panell{
+        background-color: blueviolet !important;
+        align-items: center;
+        border-radius: 10px;
+        height: 355px;
+        width: 440px;
+    }
+    .goals-panel{
+        background-color:#a38bd9 !important;
+        border-radius: 10px;
+        height: 1000px;
+        width: 600px;
+    }
+    
+    .scholarship{
+        background-color: #9d74da !important;
+        color: white;
+        border-radius: 10px;
+        height: 250px !important;
+        width: 200px !important;
+        margin-top: -7px;
+        margin-left: 100px; 
+    }
+    
+    .icons{
+        font-size: 90px;
+        text-align: center;
+        
+    }
+    .col-lg {
+        margin-top: 2rem;  
+    }
+    
+    .career{
+        background-color: #9d74da !important;
+        color: white;
+        border-radius: 10px;
+        height: 250px !important;
+        width: 200px !important;
+        margin-left: 100px;
+        margin-top: -7px; 
+    }
+    
+    
+    .skilldevelopment{
+        background-color: #9d74da !important;
+        color: white;
+        border-radius: 10px;
+        height: 250px !important;
+        width: 200px !important;
+        margin-left: 100px;
+        margin-top: -7px; 
+    }
+}
+
+@media (min-width: 991px) {
+    .info-panell{
+        background-color: blueviolet;
+        align-items: center;
+        border-radius: 10px;
+       
+      
+    }
+    .goals-panel{
+        background-color:#a38bd9;
+        border-radius: 10px;
+        height: 1000px;
+        width: 440px;
+    }
+    .scholarship{
+        background-color: #9d74da !important;
+        color: white;
+        border-radius: 10px;
+        height: 250px !important;
+        width: 200px !important;
+        margin-top: -7px;
+        margin-left: 100px; 
+    }
+    
+    .icons{
+        font-size: 90px;
+        text-align: center;
+        
+    }
+    .col-lg {
+        margin-top: 2rem;  
+    }
+    
+    .career{
+        background-color: #9d74da !important;
+        color: white;
+        border-radius: 10px;
+        height: 250px !important;
+        width: 200px !important;
+        margin-left: 100px;
+        margin-top: -7px; 
+    }
+    
+    
+    .skilldevelopment{
+        background-color: #9d74da !important;
+        color: white;
+        border-radius: 10px;
+        height: 250px !important;
+        width: 200px !important;
+        margin-left: 100px;
+        margin-top: -7px; 
+    }
+}
+@media (min-width: 992px) {
+    .info-panell{
+        background-color: blueviolet;
+        align-items: center;
+        border-radius: 10px;
+      
+    }
+    .goals-panel{
+        background-color:#a38bd9;
+        border-radius: 10px;
+        height: 350px;
+        width: 440px;
+    }
+    .scholarship{
+        background-color: #9d74da !important;
+        color: white;
+        border-radius: 10px;
+        height: 250px !important;
+        width: 200px !important;
+        margin-top: -7px;
+        margin-left: 140px; 
+    }
+    
+    .icons{
+        font-size: 90px;
+        text-align: center;
+   
+    }
+    .col-lg {
+        margin-top: 2rem;  
+    }
+    
+    .career{
+        background-color: #9d74da !important;
+        color: white;
+        border-radius: 10px;
+        height: 250px !important;
+        width: 200px !important;
+        margin-left: 80px;
+        margin-top: -7px; 
+    }
+    
+    
+    .skilldevelopment{
+        background-color: #9d74da !important;
+        color: white;
+        border-radius: 10px;
+        height: 250px !important;
+        width: 200px !important;
+        margin-left: 20px;
+        margin-top: -7px; 
+    }
+}
+
+@media (min-width: 1047px) {
+    .AboutUs{
+        height: 98vh !important ;
+    }
+    .info-panell{
+        background-color: blueviolet;
+        align-items: center;
+        border-radius: 10px;
+      
+    }
+    .goals-panel{
+        background-color:#a38bd9;
+        border-radius: 10px;
+        height: 350px;
+        width: 440px;
+    }
+    .scholarship{
+        background-color: #9d74da !important;
+        color: white;
+        border-radius: 10px;
+        height: 250px !important;
+        width: 200px !important;
+        margin-top: -7px;
+        margin-left: 140px; 
+    }
+    
+    .icons{
+        font-size: 90px;
+        text-align: center;
+   
+    }
+    .col-lg {
+        margin-top: 2rem;  
+    }
+    
+    .career{
+        background-color: #9d74da !important;
+        color: white;
+        border-radius: 10px;
+        height: 250px !important;
+        width: 200px !important;
+        margin-left: 80px;
+        margin-top: -7px; 
+    }
+    
+    
+    .skilldevelopment{
+        background-color: #9d74da !important;
+        color: white;
+        border-radius: 10px;
+        height: 250px !important;
+        width: 200px !important;
+        margin-left: 20px;
+        margin-top: -7px; 
+    }
+}

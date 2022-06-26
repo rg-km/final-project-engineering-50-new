@@ -1,15 +1,12 @@
-import React, { Component } from 'react';
+import React, {Component, useState} from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
+import cart from './Assets/cart.png';
+import useStore from "../useStore";
 
-export default class Navbar extends Component { 
-    constructor() {
-        super();
-        this.state = {
-            show: true, 
-        };
-    }
-    render() {
+const Navbar = () => {
+    const [show, setShow] = useState(true);
+    const user = useStore((state) => state.user);
         return (
             <nav className="navbar navbar-expand-lg headerbg">
             <div className="container">
@@ -17,10 +14,10 @@ export default class Navbar extends Component {
               <img src='./logo.png' width='90'/>
               </Link>
               <button className="navbar-toggler border border-info text-info"
-              onClick={ () =>{ this.setState({show: !this.state.show}) } }>
+              onClick={ () => setShow(prevState => !prevState)}>
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <div className={ this.state.show ? "collapse navbar-collapse" : "collapse navbar-collapse active" }>
+              <div className={ show ? "collapse navbar-collapse" : "collapse navbar-collapse active" }>
                 <div className="navbar-nav ms-auto">
                 <li className="nav-item">
                   <Link className="nav-link text-light " to='/' >HOME</Link>
@@ -38,14 +35,18 @@ export default class Navbar extends Component {
                   <Link className="nav-link text-light" to='/aboutus' >ABOUT US</Link>
                   </li>
                   <li className="nav-item">
-                  <Link className="nav-link text-light" to='/signin' >SIGN IN</Link>
+                  <Link className="nav-link text-light" to='/cart' ><img src={cart} width='20'/></Link>
                   </li>
+                  <li className="nav-item">
+                  <Link className="nav-link text-light" to='/signin' >{user.name ? 'SIGN OUT' : 'SIGN IN'}</Link>
+                  </li>
+
                 </div>
               </div>
             </div>
-         
+
           </nav>
         );
     }
-}
-    
+
+    export default Navbar;

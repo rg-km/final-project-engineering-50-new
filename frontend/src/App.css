@@ -1,11 +1,6 @@
 .App{
   background: #ECE4FD;
   background-size: cover;
-  height: 550vh;
+
 }
 
-@media (min-width: 991px){
-  .App{
-    height: 250vh;
-  }
-}
