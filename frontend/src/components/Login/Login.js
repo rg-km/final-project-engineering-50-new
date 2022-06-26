@@ -4,11 +4,14 @@ import { Link, useNavigate} from 'react-router-dom';
 import logo from '../Assets/aimprove.png';
 import {Form} from 'react-bootstrap';
 import axios from 'axios'
+import useStore from "../../useStore";
 
 
 const LoginPage = () => {
     const navigate = useNavigate();
     const[email,setEmail] = useState('');
+    const setUser = useStore((state) => state.setUser);
+    const user = useStore((state) => state.user);
     const[errorEmail,setErrorEmail] = useState('');
     const[password,setPassword] = useState('');
     const[errorPassword,setErrorPassword] = useState('');
@@ -16,7 +19,7 @@ const LoginPage = () => {
     const[error,setError] = useState('');
 
     const onChangeEmail =(e) =>{
-        const value = e.target.value 
+        const value = e.target.value
         setEmail(value)
         if(!value){
             setErrorEmail('Email tidak boleh kosong')
@@ -50,9 +53,24 @@ const LoginPage = () => {
             console.log(data)
             axios.post('http://localhost:8080/api/login', data)
             .then(result =>{
-                console.log("bebas")
+                console.log(result.data)
                 if(result){
+                const d = result.data;
                 localStorage.setItem('token', result.data.token)
+                    setUser({
+                        name: d.name,
+                        phone: d.phone,
+                        ttl: d.ttl,
+                        address: d.address,
+                        education: d.education,
+                    });
+                localStorage.setItem('user', JSON.stringify({
+                    name: d.name,
+                    phone: d.phone,
+                    ttl: d.ttl,
+                    address: d.address,
+                    education: d.education,
+                }));
                 navigate("/")
                 // setRedirect(true)
             }
@@ -76,7 +94,7 @@ const LoginPage = () => {
             } */}
             <div className="maincontainer">
                 <div className="container-fluid">
-                    <div className="row no-gutter"> 
+                    <div className="row no-gutter">
                         <div className="col-md-6 bg-light">
                             <img src={logo} width={200} height={150}>
                             </img>
@@ -90,10 +108,11 @@ const LoginPage = () => {
                                         )
                                     }
 
-                                    <div className="row">  
+                                    <div className="row">
                                         <div className="col-lg-10 col-xl-7 mx-auto">
                                             <h3 className="display-4">SIGN IN</h3>
                                             <p className="text-muted mb-4">Sign in to continue to our application</p>
+                                            <p>Hi {user.name}</p>
                                             <Form>
                                                 <div className="mb-3">
                                                     <input id="inputEmail" type="email" placeholder="Email address" required="" autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4 form-bg" value={email} onChange={onChangeEmail}/>
@@ -120,8 +139,8 @@ const LoginPage = () => {
                                                 <div className="d-grid gap-2 mt-2">
                                                 <button type="submit"  className="btn btn-ungu btn-block text-uppercase mb-2 shadow-sm" onClick={submitLogin}>Sign in</button>
                                                 </div>
-                                                
-                                                
+
+
                                             </Form>
                                         </div>
                                     </div>
