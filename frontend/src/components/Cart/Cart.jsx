@@ -1,9 +1,14 @@
 import './Cart.css';
 import { useCart } from 'react-use-cart';
+import React, {useState} from "react";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import useStore from "../../useStore";
+import {Toast, ToastContainer} from "react-bootstrap";
 
 const Cart = () => {
-
-    const { 
+    const user = useStore((state) => state.user);
+    const {
         isEmpty,
         totalUniqueItems,
         items,
@@ -13,6 +18,8 @@ const Cart = () => {
         removeItem,
         emptyCart,
     } = useCart();
+    const [isCheckoutShown, setIsCheckoutShown] = useState(false);
+    const [isToastShown, setIsToastShown] = useState(false);
     if(isEmpty) return <h5 className='text-center py-5'>My Cart is Empty.</h5>
     return (
         <div className='container-fluid py-3'>
@@ -49,8 +56,38 @@ const Cart = () => {
                         <h3>Total Price: Rp.{cartTotal}.000,00</h3>
                     </div>
                     <div className="d-flex justify-content-center py-5">
-                        <button onClick='/checkout' className="btn btn-primary">Checkout</button>
-                        
+                        <button onClick={() => setIsCheckoutShown(true)} className="btn btn-primary">Checkout</button>
+                        <Modal show={isCheckoutShown} onHide={() => setIsCheckoutShown(false)}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Checkout: </Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                <p>Halo {user.name}! Silakan transfer ke:</p>
+                                <h2>Bank Central Asia</h2>
+                                <p>043123232</p>
+                                <h3>Total Price: Rp.{cartTotal}.000,00</h3>
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="danger" onClick={() => setIsCheckoutShown(false)}>
+                                    Batal
+                                </Button>
+                                <Button variant="primary" onClick={() => {
+                                    setIsCheckoutShown(false);
+                                    setIsToastShown(true);
+                                }}>
+                                    Checkout
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
+                        <ToastContainer position='bottom-center'>
+                            <Toast show={isToastShown} onClose={() => setIsToastShown(false)}>
+                                <Toast.Header>
+                                    <strong className="me-auto">Oder processed!</strong>
+                                    <small>right now</small>
+                                </Toast.Header>
+                                <Toast.Body>We're processing your order now. Hang tight!</Toast.Body>
+                            </Toast>
+                        </ToastContainer>
                     </div>
                 </div>
             </div>

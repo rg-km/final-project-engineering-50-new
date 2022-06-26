@@ -16,8 +16,10 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from "axios";
+import useStore from "../../useStore"
 
 const IISMA = () => {
+  const user = useStore((state) => state.user);
   const [show, setShow] = useState(false);
   const [motivasi, setMotivasi] = useState('');
   const [errorMotivasi, setErrorMotivasi] = useState('');
@@ -37,7 +39,12 @@ const IISMA = () => {
   }
   const submitDaftar = (e) =>{
     const data ={
-      motivasi:motivasi
+      motivasi:motivasi,
+      name: user.name,
+      phone: user.phone,
+      ttl: user.ttl,
+      address: user.address,
+      education: user.education,
     }
     //console.log(data)
     if(!motivasi){
