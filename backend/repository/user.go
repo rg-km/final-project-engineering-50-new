@@ -30,7 +30,7 @@ func (r *UserRepository) GetAll() ([]User, error) {
 
 func (r *UserRepository) GetById(id int64) (User, error) {
 	var s User
-	err := r.db.QueryRow("SELECT * FROM user WHERE id = ?", id).Scan(&s.Id, &s.Nama, &s.NomorTelpon, &s.TempatTanggalLahir, &s.Alamat, &s.Pendidikan, &s.Email, &s.Password)
+	err := r.db.QueryRow("SELECT * FROM user WHERE id = ?", id).Scan(&s.Id, &s.Nama, &s.NomorTelpon, &s.TempatTanggalLahir, &s.Alamat, &s.Pendidikan, &s.Email, &s.Password )
 	if err != nil {
 		return s, err
 	}
@@ -39,8 +39,8 @@ func (r *UserRepository) GetById(id int64) (User, error) {
 
 func (r *UserRepository) Register(namalengkap string, nomortelpon string, tempattanggallahir string, alamat string, pendidikan string, email string, password string) (User, error) {
 	var s User
-	err := r.db.QueryRow("INSERT INTO user (nama_lengkap, nomor_telpon, tempat_tanggal_lahir, alamat, pendidikan, email, password) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id, nama_lengkap, nomor_telpon, tempat_tanggal_lahir, alamat, pendidikan, email, password",
-		namalengkap, nomortelpon, tempattanggallahir, alamat, pendidikan, email, password).Scan(&s.Id, &s.Nama, &s.NomorTelpon, &s.TempatTanggalLahir, &s.Alamat, &s.Pendidikan, &s.Email, &s.Password)
+	err := r.db.QueryRow("INSERT INTO user (nama_lengkap, nomor_telpon, tempat_tanggal_lahir, alamat, pendidikan, email, password) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id, nama_lengkap, nomor_telpon, tempat_tanggal_lahir, alamat, pendidikan, email, password", 
+	namalengkap, nomortelpon, tempattanggallahir, alamat, pendidikan, email, password).Scan(&s.Id, &s.Nama, &s.NomorTelpon, &s.TempatTanggalLahir, &s.Alamat, &s.Pendidikan, &s.Email, &s.Password)
 	if err != nil {
 		return s, err
 	}
@@ -58,8 +58,8 @@ func (r *UserRepository) Login(email string, password string) (User, error) {
 
 func (r *UserRepository) Update(id int64, namalengkap string, nomortelpon string, tempattanggallahir string, alamat string, pendidikan string, email string, password string) (User, error) {
 	var s User
-	err := r.db.QueryRow("UPDATE user SET nama_lengkap = ?, nomor_telpon = ?, tempat_tanggal_lahir = ?, alamat = ?, pendidikan = ?, email = ?, password = ? WHERE id = ? RETURNING id, nama_lengkap, nomor_telpon, tempat_tanggal_lahir, alamat, pendidikan, email, password",
-		namalengkap, nomortelpon, tempattanggallahir, alamat, pendidikan, email, password, id).Scan(&s.Id, &s.Nama, &s.NomorTelpon, &s.TempatTanggalLahir, &s.Alamat, &s.Pendidikan, &s.Email, &s.Password)
+	err := r.db.QueryRow("UPDATE user SET nama_lengkap = ?, nomor_telpon = ?, tempat_tanggal_lahir = ?, alamat = ?, pendidikan = ?, email = ?, password = ? WHERE id = ? RETURNING id, nama_lengkap, nomor_telpon, tempat_tanggal_lahir, alamat, pendidikan, email, password", 
+	namalengkap, nomortelpon, tempattanggallahir, alamat, pendidikan, email, password, id).Scan(&s.Id, &s.Nama, &s.NomorTelpon, &s.TempatTanggalLahir, &s.Alamat, &s.Pendidikan, &s.Email, &s.Password)
 	if err != nil {
 		return s, err
 	}

@@ -19,9 +19,8 @@ type User struct {
 }
 
 type LoginSuccessResponse struct {
-	Email   string `json:"email"`
-	Token   string `json:"token"`
-	ID_User int    `json:"id_user"`
+	Email string `json:"email"`
+	Token string `json:"token"`
 }
 
 type AuthErrorResponse struct {
@@ -72,7 +71,7 @@ func (api *API) login(w http.ResponseWriter, r *http.Request) {
 		Expires: expTime,
 	})
 
-	json.NewEncoder(w).Encode(LoginSuccessResponse{Email: res.Email, Token: tokenString, ID_User: int(res.Id)})
+	json.NewEncoder(w).Encode(LoginSuccessResponse{Email: res.Email, Token: tokenString})
 }
 
 func (api *API) register(w http.ResponseWriter, r *http.Request) {

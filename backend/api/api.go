@@ -36,8 +36,7 @@ func NewApi(userRepo repository.UserRepository, aimproveRepo repository.Aimprove
 	mux.Handle("/api/user", api.GET(http.HandlerFunc(api.getUser)))
 	mux.Handle("/api/user/", api.GET(http.HandlerFunc(api.getUserById)))
 	mux.Handle("/api/aimprove", api.GET(http.HandlerFunc(api.getAimprove)))
-	mux.Handle("/api/aimprove/daftar", api.POST(http.HandlerFunc(api.daftarAimprove)))
-
+	mux.Handle("/api/aimprove/", api.GET(http.HandlerFunc(api.getAimproveById)))
 	return api
 }
 
