@@ -60,7 +60,7 @@ const Companycamp = () => {
         <div className="col-lg col-md company-panel">
           <div className='row'>
             <div className='col-lg-5 col-md-12'>
-              <h1 className='text-head text-left'>COMPANY CAMP</h1>
+              <h1 className='text-head-company'>COMPANY CAMP</h1>
               <img src={Image1} class="company-img" alt="CC" />
             </div>
             <div className='text-company col-lg-7 col-md-12 text-center'>
@@ -71,7 +71,7 @@ const Companycamp = () => {
               dan masih banyak lagi yang bisa didapetin untuk mencari tahu awal langkah kita loh.<br/>
               <b>Ayo segera daftarkan diri kamu !!</b>
 
-              <div className="btn-group">
+              <div className="klik-company">
                       <button class="btn btn-dark btn-lg " onClick={handleShow}>Daftar</button>
                     <Modal show={show} onHide={handleClose}>
                       <Modal.Header closeButton>
@@ -113,10 +113,10 @@ const Companycamp = () => {
       <div className="row justify-content-center my-3">
               <h2 className="text-head-act text-center mt-4">Our Activities</h2>
             <div className="col-12 col-lg-6 col-md-6 mt-5">
-              <div className="card mx-auto shadow">
+              <div className="card-company mx-auto shadow">
                 <div className="card-body ">
-                    <img src={Image2} className="offer-img text-center card-img" alt="intern" />
-                    <p className="card-text text-center">
+                    <img src={Image2} className="act-company-img text-center card-img" alt="intern" />
+                    <p className="card-text-company text-center">
                     <b>Internship Opportunity</b>
                     </p>
                 </div>
@@ -124,10 +124,10 @@ const Companycamp = () => {
             </div>
 
             <div className="col-12 col-lg-6 col-md-6 mt-5">
-              <div className="card mx-auto shadow">
+              <div className="card-company mx-auto shadow">
                 <div className="card-body ">
-                    <img src={Image3} className="offer-img text-center card-img" alt="interview" />
-                    <p className="card-text text-center">
+                    <img src={Image3} className="act-company-img text-center card-img" alt="interview" />
+                    <p className="card-text-company text-center">
                     <b>Interview Practice</b>
                     </p>
                 </div>
@@ -135,10 +135,10 @@ const Companycamp = () => {
             </div>
 
             <div className="col-12 col-lg-6 col-md-6 mt-5">
-              <div className="card mx-auto shadow">
+              <div className="card-company mx-auto shadow">
                 <div className="card-body ">
-                    <img src={Image4} className="offer-img text-center card-img" alt="review" />
-                    <p className="card-text text-center">
+                    <img src={Image4} className="act-company-img text-center card-img" alt="review" />
+                    <p className="card-text-company text-center">
                     <b>CV & LinkedIn Review</b>
                     </p>
                   </div>
@@ -146,10 +146,10 @@ const Companycamp = () => {
             </div>
 
             <div className="col-12 col-lg-6 col-md-6 mt-5">
-              <div className="card mx-auto shadow">
+              <div className="card-company mx-auto shadow">
                 <div className="card-body ">
-                    <img src={Image5} className="offer-img text-center card-img" alt="webinar" />
-                    <p className="card-text text-center">
+                    <img src={Image5} className="act-company-img text-center card-img" alt="webinar" />
+                    <p className="card-text-company text-center">
                     <b>Webinar with Experts</b>
                     </p>
                 </div>

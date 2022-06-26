@@ -13,7 +13,7 @@ const AboutUs = () => {
           <h2 className="section-tittle fw-bold text-light text-center">What is Aimprove?</h2>
             <p className="section-tittle fw-bold text-light text-center"> <h5>Aimprove is a startup <br/>  that focuses
 on self-development, <br/>  especially for students. Aimprove will be a bridge for students to achieve their dreams.</h5>
-            </p>
+            </p> 
         
             <div className="row3 row justify-content-center">
             <div className="col-lg goals-panel">

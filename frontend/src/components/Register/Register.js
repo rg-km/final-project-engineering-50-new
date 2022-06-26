@@ -1,18 +1,23 @@
 import React, {useState} from 'react';
 import './Register.css';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate} from 'react-router-dom';
 import logo from '../Assets/aimprove.png';
 import {Form} from 'react-bootstrap';
 import axios from 'axios'
 
 
 const RegisterPage = () => {
-    const[nama,setNama] = useState('');
+    const navigate = useNavigate();
+    const[nama_lengkap,setNama] = useState('');
     const[errorNama,setErrorNama] = useState('');
-    const[tanggal,setTanggal] = useState('');
-    const[errorTanggal,setErrorTanggal] = useState('');
-    const[jurusan,setJurusan] = useState('');
-    const[errorJurusan,setErrorJurusan] = useState('');
+    const[nomor_telpon,setNoTelp] = useState('');
+    const[errorNoTelp,setErrorNoTelp] = useState('');
+    const[tempat_tanggal_lahir,setTTL] = useState('');
+    const[errorTTL,setErrorTTL] = useState('');
+    const[alamat,setAlamat] = useState('');
+    const[errorAlamat,setErrorAlamat] = useState('');
+    const[pendidikan,setPendidikan] = useState('');
+    const[errorPendidikan,setErrorPendidikan] = useState('');
     const[email,setEmail] = useState('');
     const[errorEmail,setErrorEmail] = useState('');
     const[password,setPassword] = useState('');
@@ -30,24 +35,44 @@ const RegisterPage = () => {
             setErrorNama('')
         }
     }
-    const onChangeTanggal =(e) =>{
+    const onChangeNoTelp =(e) =>{
         const value = e.target.value
-        setTanggal(value)
+        setNoTelp(value)
         setError('')
         if(!value){
-            setErrorTanggal('Tanggal Lahir tidak boleh kosong')
+            setErrorNoTelp('Nomor telepon tidak boleh kosong')
         } else{
-            setErrorTanggal('')
+            setErrorNoTelp('')
         }
     }
-    const onChangeJurusan =(e) =>{
+    const onChangeTTL =(e) =>{
         const value = e.target.value
-        setJurusan(value)
+        setTTL(value)
         setError('')
         if(!value){
-            setErrorJurusan('Jurusan tidak boleh kosong')
+            setErrorTTL('Tanggal Lahir tidak boleh kosong')
         } else{
-            setErrorJurusan('')
+            setErrorTTL('')
+        }
+    }
+    const onChangeAlamat =(e) =>{
+        const value = e.target.value
+        setAlamat(value)
+        setError('')
+        if(!value){
+            setErrorAlamat('Alamat tidak boleh kosong')
+        } else{
+            setErrorAlamat('')
+        }
+    }
+    const onChangePendidikan =(e) =>{
+        const value = e.target.value
+        setPendidikan(value)
+        setError('')
+        if(!value){
+            setErrorPendidikan('Jurusan tidak boleh kosong')
+        } else{
+            setErrorPendidikan('')
         }
     }
     const onChangeEmail =(e) =>{
@@ -70,27 +95,34 @@ const RegisterPage = () => {
             setErrorPassword('')
         }
     }
-    const clickRegis = () =>{
+    const clickRegis = (e) =>{
+        e.preventDefault()
         const data ={
-            nama: nama,
-            tanggal: tanggal,
-            jurusan:jurusan,
+            nama_lengkap: nama_lengkap,
+            nomor_telpon: nomor_telpon,
+            tempat_tanggal_lahir: tempat_tanggal_lahir,
+            alamat: alamat,
+            pendidikan: pendidikan,
             email: email,
             password: password
         }
         // console.log(data)
-        if(!nama){
-            setNama('Nama tidak boleh kosong!')
-        } else if (!tanggal) {
-            setTanggal('Tanggal tidak boleh kosong!')
-        } else if (!jurusan){
+        if(!nama_lengkap){
+            setError('Nama tidak boleh kosong!')
+        } else if (!nomor_telpon) {
+            setError('No telepon tidak boleh kosong!')
+        }else if (!tempat_tanggal_lahir) {
+            setError('Tanggal tidak boleh kosong!')
+        }else if (!alamat) {
+            setError('Alamat tidak boleh kosong!')
+        } else if (!pendidikan){
             setError('Jurusan tidak boleh kosong!')
         } else if(!email){
             setError('Email tidak boleh kosong!')
         } else if (!password) {
             setError('Password tidak boleh kosong!')
         } else{
-        axios.post('http://localhost:3001/register', data)
+        axios.post('http://localhost:8080/api/register', data)
         .then(result =>{
             if(result){
                 if(result.data){
@@ -100,6 +132,7 @@ const RegisterPage = () => {
                     setTimeout(() => {
                         setAlert('')
                     }, 3000)
+                    navigate("/signin")
                 }
             }
 
@@ -144,7 +177,7 @@ const RegisterPage = () => {
                                             <p className="text-muted mb-4">Register to login to our application</p>
                                             <Form>
                                                 <div className="mb-3">
-                                                    <input id="inputNama" type="nama" placeholder="Nama Lengkap" required="" autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4 form-bg" value={nama} onChange={onChangeNama} />
+                                                    <input id="inputNama" type="nama_lengkap" placeholder="Nama Lengkap" required="" autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4 form-bg" value={nama_lengkap} onChange={onChangeNama} />
                                                     {
                                                         errorNama && (
                                                             <p className="text-danger">{errorNama}</p>
@@ -152,18 +185,34 @@ const RegisterPage = () => {
                                                     }
                                                 </div>
                                                 <div className="mb-3">
-                                                    <input id="inputTanggalLahir" type="tanggal" placeholder="Tanggal Lahir" required="" autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4 form-bg" value={tanggal} onChange={onChangeTanggal} />
+                                                    <input id="inputNoTelp" type="nomor_telpon" placeholder="No Telepon" required="" autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4 form-bg" value={nomor_telpon} onChange={onChangeNoTelp} />
                                                     {
-                                                        errorTanggal && (
-                                                            <p className="text-danger">{errorTanggal}</p>
+                                                        errorNoTelp && (
+                                                            <p className="text-danger">{errorNoTelp}</p>
                                                         )
                                                     }
                                                 </div>
                                                 <div className="mb-3">
-                                                    <input id="inputJurusan" type="jurusan" placeholder="Jurusan" required="" autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4 form-bg" value={jurusan} onChange={onChangeJurusan} />
+                                                    <input id="inputTempatTanggalLahir" type="tempat_tanggal_lahir" placeholder="Tempat Tanggal Lahir" required="" autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4 form-bg" value={tempat_tanggal_lahir} onChange={onChangeTTL} />
                                                     {
-                                                        errorJurusan && (
-                                                            <p className="text-danger">{errorJurusan}</p>
+                                                        errorTTL && (
+                                                            <p className="text-danger">{errorTTL}</p>
+                                                        )
+                                                    }
+                                                </div>
+                                                <div className="mb-3">
+                                                    <input id="inputAlamat" type="alamat" placeholder="Alamat" required="" autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4 form-bg" value={alamat} onChange={onChangeAlamat} />
+                                                    {
+                                                        errorAlamat && (
+                                                            <p className="text-danger">{errorAlamat}</p>
+                                                        )
+                                                    }
+                                                </div>
+                                                <div className="mb-3">
+                                                    <input id="inputPendidikan" type="pendidikan" placeholder="Pendidikan" required="" autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4 form-bg" value={pendidikan} onChange={onChangePendidikan} />
+                                                    {
+                                                        errorPendidikan && (
+                                                            <p className="text-danger">{errorPendidikan}</p>
                                                         )
                                                     }
                                                 </div>

@@ -25,6 +25,7 @@ const IISMA = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const navigate = useNavigate();
+  
   const onChangeMotivasi = (e) => {
     const value = e.target.value
     setMotivasi(value)
@@ -44,7 +45,7 @@ const IISMA = () => {
     } else{
       e.preventDefault()
       navigate('/cart');
-      axios.post('http://localhost:3001/IISMA', data)
+      axios.post('http://localhost:8080/api/aimprove', data)
       .then(result =>{
         if(result){
            localStorage.setItem('token', result.data.token)
@@ -72,7 +73,7 @@ const IISMA = () => {
         <div className="col-lg col-md iisma-panel">
           <div className="row">
             <div className="col-lg-5 col-md-12 mt-3">
-              <h2 className="text-head ">IISMA-CAMP</h2>
+              <h2 className="text-head iism">IISMA-CAMP</h2>
               <div className="text-center">
                 <img src={require("../Assets/iisma-2.png")} class="image3" alt="iisma" />
               </div>
@@ -83,39 +84,39 @@ const IISMA = () => {
                 akan mendapatkan berbagai pengalaman IISMA di beberapa negara langsung dari peserta IISMA sebelumnya dan tentu saja dengan tips and triknya loooohh. <br />
                 <b> Ayooo buruan daftar sebelum kehabisan!!!!.</b>
               </p>
-                  <div className="btn-group">
-                      <button class="btn btn-dark btn-lg " onClick={handleShow}>Daftar</button>
-                    <Modal show={show} onHide={handleClose}>
-                      <Modal.Header closeButton>
-                        <Modal.Title>Form Daftar IISMA</Modal.Title>
-                      </Modal.Header>
-                      <Modal.Body>
-                        <Form>
-                          <Form.Group
-                            className="mb-3"
-                            controlId="exampleForm.ControlTextarea1"
-                          >
-                            <Form.Label>Motivasi</Form.Label>
-                            <Form.Control as="textarea" value={motivasi} onChange={onChangeMotivasi} rows={3} />
-                            {
-                              errorMotivasi && (
-                                <p
-                                className="text-danger">{errorMotivasi}</p>
-                              )
-                            }
-                          </Form.Group>
-                        </Form>
-                      </Modal.Body>
-                      <Modal.Footer>
-                        <Button variant="danger" onClick={handleClose}>
-                          Batal
+                <div className="tombol-group">
+                    <button class="btn btn-dark btn-lg " onClick={handleShow}>Daftar</button>
+                  <Modal show={show} onHide={handleClose}>
+                    <Modal.Header closeButton>
+                      <Modal.Title>Form Daftar IISMA</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                      <Form>
+                        <Form.Group
+                          className="mb-3"
+                          controlId="exampleForm.ControlTextarea1"
+                        >
+                          <Form.Label>Motivasi</Form.Label>
+                          <Form.Control as="textarea" value={motivasi} onChange={onChangeMotivasi} rows={3} />
+                          {
+                            errorMotivasi && (
+                              <p
+                              className="text-danger">{errorMotivasi}</p>
+                            )
+                          }
+                        </Form.Group>
+                      </Form>
+                    </Modal.Body>
+                    <Modal.Footer>
+                      <Button variant="danger" onClick={handleClose}>
+                        Batal
+                      </Button>
+                        <Button variant="primary" onClick={submitDaftar}>
+                          Daftar
                         </Button>
-                          <Button variant="primary" onClick={submitDaftar}>
-                            Daftar
-                          </Button>
-                      </Modal.Footer>
-                    </Modal>
-                  </div>
+                    </Modal.Footer>
+                  </Modal>
+                </div>
             </div>
           </div>
         </div>
