@@ -1,10 +1,14 @@
 package repository
 
 type Aimprove struct {
-	Id          int64  `db:"id" json:"id"`
-	Id_User     int64  `db:"id_user" json:"id_user"`
-	PilihanCamp string `db:"pilihan_camp" json:"pilihan_camp"`
-	Motivasi    string `db:"motivasi" json:"motivasi"`
+	Id             int64  `db:"id" json:"id"`
+	NamaLengkap    string `db:"nama_lengkap" json:"nama_lengkap"`
+	Password       string `db:"password" json:"password"`
+	Email          string `db:"email" json:"email"`
+	Pendidikan     string `db:"pendidikan" json:"pendidikan"`
+	PilihanCamp    string `db:"pilihan_camp" json:"pilihan_camp"`
+	TanggalMulai   string `db:"tanggal_mulai" json:"tanggal_mulai"`
+	TanggalSelesai string `db:"tanggal_selesai" json:"tanggal_selesai"`
 }
 
 type User struct {

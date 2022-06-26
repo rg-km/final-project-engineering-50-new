@@ -13,10 +13,11 @@ func NewSQLite() (*sql.DB, error) {
 	_, err = db.Exec(`
 	CREATE TABLE IF NOT EXISTS aimprove (
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
-		id_user INTEGER,
-		pilihan_camp STRING,
-		motivasi STRING,
-		FOREIGN KEY (id_user) REFERENCES user(id)
+		nama_lengkap TEXT,
+		pendidikan TEXT,
+		pilihan_camp TEXT,
+		tanggal_mulai TEXT,
+		tanggal_selesai TEXT
 		);
 
 		CREATE TABLE IF NOT EXISTS user (
@@ -40,39 +41,37 @@ func NewSQLite() (*sql.DB, error) {
 
 		CREATE TABLE IF NOT EXISTS cart (
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
-	    pembayaran TEXT
+	    pembayaran TEXT,
+		motivasi TEXT
 		);
 
 		CREATE TABLE IF NOT EXISTS iisma (
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 		penjelasan_iisma TEXT,
 		booklet_unilist TEXT,
-		info_iisma TEXT,
-		image_iisma TEXT
+		info_iisma TEXT
 		);
 
 		CREATE TABLE IF NOT EXISTS company (
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 		penjelasan_company TEXT,
 		booklet_companylist TEXT,
-		info_company TEXT,
-		image_company TEXT
+		info_company TEXT
 		);
 
 		CREATE TABLE IF NOT EXISTS fyp (
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 		penjelasan_fyp TEXT,
 		booklet_fyplist TEXT,
-		info_fyp TEXT,
-		image_fyp TEXT
+		info_fyp TEXT
 		);
 
 	
 		INSERT INTO user (nama_lengkap, nomor_telpon, tempat_tanggal_lahir, alamat, pendidikan, email, password)
 		VALUES ('Rahma', '0812', 'Jakarta-2001-01-01', 'Pamulang', 'S1-Informatika-Universitas-Indonesia', 'ex@gmail.com', '192837465');
 			
-		INSERT INTO aimprove (id_user, motivasi, pilihan_camp)
-		VALUES ('12', 'semangat', 'IISMA');
+		INSERT INTO aimprove (nama_lengkap, pendidikan, pilihan_camp, tanggal_mulai, tanggal_selesai)
+		VALUES ('Rahma', 'S1-Informatika-Universitas-Indonesia', 'IISMA', '2020-01-01', '2020-02-01');
 		`)
 
 	if err != nil {
