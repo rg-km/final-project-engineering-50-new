@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 import './css/bootstrap.min.css';
 import Navbar from './components/Navbar';
@@ -17,8 +17,18 @@ import { CartProvider } from 'react-use-cart';
 import PageProduct from './components/Cart/PageProduct';
 import FYP from './components/home/FYP';
 import Companycamp from './components/home/Companycamp';
+import useStore from "./useStore";
 
+  
 function App() {
+
+  const setUser = useStore((state) => state.setUser);
+  useEffect(() => {
+      const existingUser = localStorage.getItem('user');
+      if (existingUser) {
+          setUser(JSON.parse(existingUser));
+      }
+  }, []);
   return (
      
     <div className="App">
