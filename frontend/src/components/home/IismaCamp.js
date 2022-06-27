@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import { Link } from "react-router-dom";
+import React, { useState} from "react";
+import {useNavigate} from "react-router-dom";
 import "../Styles/IISMA.css";
 import relation from "../Assets/iisma-relation.png";
 import tips from "../Assets/iisma-tips.png";
@@ -16,16 +16,18 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from "axios";
-import useStore from "../../useStore"
+import useStore from "../../useStore";
 
 const IISMA = () => {
   const user = useStore((state) => state.user);
   const [show, setShow] = useState(false);
-
+  const [motivasi, setMotivasi] = useState('');
+  const [errorMotivasi, setErrorMotivasi] = useState('');
+  const [error, setError] = useState('');
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const navigate = useNavigate();
-  
+
   const onChangeMotivasi = (e) => {
     const value = e.target.value
     setMotivasi(value)
@@ -37,7 +39,7 @@ const IISMA = () => {
   }
   const submitDaftar = (e) =>{
     const data ={
-      motivasi:motivasi,
+      motivasi: motivasi,
       name: user.name,
       phone: user.phone,
       ttl: user.ttl,
@@ -62,11 +64,18 @@ const IISMA = () => {
          setError(e.response.data.message)
        })
     }
-    
+
   }
 
   return (
     <div className="container">
+      {
+        error && (
+            <div className='alert alert-danger'>
+                <p>{error}</p>
+            </div>
+        )
+      }
       <div className="row justify-content-center mt-4 mb-4">
         <div className="col-lg col-md iisma-panel">
           <div className="row">
@@ -199,7 +208,7 @@ const IISMA = () => {
           <div className="text-head text-center">
             <h2 className="rata-text">Pengumuman Administrasi</h2>
           </div>
-          
+
         </div>
         <div className="col-12 col-lg-4 col-md-6 mt-5">
           <div className="text-center">
