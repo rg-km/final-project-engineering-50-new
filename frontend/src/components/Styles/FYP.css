@@ -2,11 +2,12 @@
     background-color: #e0d7f6;
     align-items: center;
     border-radius: 10px;
-    height: 880px;
+    height: 1050px;
     width: 440px;
 }
-.text-head{
-    text-align: left;
+.text-head-fyp{
+    color: #531CB9;
+    text-align: center;
     padding: 40px;
     font-size:xx-large ;
     font-style: oblique;
@@ -19,38 +20,46 @@
     font-size: xx-large ;
     font-weight: bolder;
 }
-.text-act{
+.text-body-act{
     text-align: center;
     font-size: medium;
     font-weight: bold;
 }
 .fyp-img{
-    align-items: left;
     width: 350px;
     height: 350px;
-    margin-left: 20px;
+    margin-left: 30px;
+    margin-top: -5px;
 }
 .act-img{
     border-radius: 360px;
     align-items: center;
-    margin-left: 50px;
+    margin-left: 85px;
     width: 300px;
 }
 
 .text-fyp{
     margin-top: 20px;
+    font-size: large;
 }
 
-.card {
+.card-fyp {
     background-color: #e0d7f6;
-    height: 330px;
-    width: 440px;
+    height: 330px !important;
+    width: 440px !important;
 }
-.card-text{
+
+.card-text-fyp{
     font-size: large;
+    margin-top: 10px;
 }
 .offer-img{
     height: 260px;
+}
+
+.klik-regist-fyp {
+    margin-top: 25px !important;
+    align-items: center;
 }
 
 @media (min-width: 768px){
@@ -58,11 +67,12 @@
         background-color: #e0d7f6;
         align-items: center;
         border-radius: 10px;
-        height: 800px;
+        height: 900px;
         width: 440px;
     }
-    .text-head{
-        text-align: left;
+    .text-head-fyp{
+        color: #531CB9;
+        text-align: center;
         font-size:xx-large ;
         font-style: oblique;
         font-weight: bolder;
@@ -75,17 +85,18 @@
         font-size: xx-large ;
         font-weight: bolder;
     }
-    .text-act{
+    .text-body-act{
         padding-top: 20px;
         text-align: center;
-        font-size: medium;
+        font-size: larger;
         font-weight: bold;
     }
     .fyp-img{
         align-items: center;
         width: 350px;
         height: 350px;
-        margin-left: 20px;
+        margin-left: 170px;
+        margin-top: -5px;
     }
     .act-img{
         border-radius: 360px;
@@ -96,7 +107,32 @@
     
     .text-fyp{
         margin-top: 30px;
+        font-size: large;
     }
+
+    .card-fyp {
+        background-color: #e0d7f6;
+        height: 310px !important;
+        width: 350px !important;
+    }
+
+    .card-text-fyp{
+    font-size: large;
+    text-align: center;
+    margin-top: 15px;
+}
+    
+    .offer-img{
+        height: 220px !important;
+        width: 220px !important;
+        margin-top: 10px;
+        margin-left: 48px !important;
+    }
+
+    .klik-regist-fyp {
+        margin-top: 110px;
+        align-items: center;
+      }
 }
 
 @media (min-width: 991px){
@@ -104,15 +140,18 @@
         background-color: #e0d7f6;
         align-items: center;
         border-radius: 10px;
-        height: 500px;
+        height: 550px;
         width: 440px;
     }
-    .text-head{
+    .text-head-fyp{
         text-align: left;
+        color: #531CB9;
         font-size:xx-large ;
         font-style: oblique;
         font-weight: bolder;
-        padding-top: 50px;
+        padding: 10px;
+        margin-top: 20px;
+        margin-left: 10px;
     }
     .text-head-act{
         text-align: center;
@@ -121,8 +160,8 @@
         font-size: xx-large ;
         font-weight: bolder;
     }
-    .text-act{
-        padding-top: 100px;
+    .text-body-act{
+        padding-top: 90px;
         text-align: right;
         font-size: medium;
         font-weight: bold;
@@ -132,24 +171,41 @@
         width: 350px;
         height: 350px;
         margin-left: 20px;
+        margin-top: 20px;
     }
     .act-img{
         border-radius: 360px;
         align-items: left;
-        width: 300px;
+        margin-left: 50px;
     }
     
     .text-fyp{
-        margin-top: 80px;
+    margin-top: 130px;
+    font-size: medium;
+    margin-left: -50px;
     }
 
-    .card {
-        background-color: #e0d7f6;
-        height: 330px;
-        width: 440px;
-    }
+    .click-regist-fyp {
+        margin-top: 100px;
+        align-items: left;
+        margin-left: -250px;
+      }
 
-    .card-text{
-        font-size: large;
-    }
+      .card-fyp {
+    background-color: #e0d7f6 !important;
+    height: 330px !important;
+    width: 440px !important;
+}
+
+.offer-img{
+    height: 260px !important;
+    width: 290px !important;
+    margin-left: 58px !important;
+    margin-top: 5px;
+}
+    .card-text-fyp{
+    font-size: large;
+    text-align: center;
+    margin-top: 8px;
+}
 }
