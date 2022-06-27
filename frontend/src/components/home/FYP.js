@@ -58,7 +58,6 @@ const FYP = () => {
          setError(e.response.data.message)
        })
     }
-
   }
 
   return (

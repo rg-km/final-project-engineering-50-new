@@ -1,40 +1,194 @@
-.info-panel{
-    background-color: #FFFF;
+.company-panel{
+    background-color: #e0d7f6;
+    align-items: center;
+    border-radius: 10px;
+    height: 960px;
+    width: 440px;
+}
+.text-head-company{
+    color: #531CB9;
+    text-align: center;
+    padding: 40px;
+    font-size:xx-large ;
+    font-style: oblique;
+    font-weight: bolder;
+
+}
+.text-head-act{
+    text-align: center;
+    color: #531CB9;
+    padding: 30px;
+    font-size: xx-large ;
+    font-weight: bolder;
+}
+
+.company-img{
+    align-items: left;
+    width: 350px;
+    height: 350px;
+    margin-left: 30px;
+    margin-top: -5px;
+}
+
+.text-company{
+    margin-top: 20px;
+}
+
+.card-company {
+    background-color: #e0d7f6;
+    height: 330px;
+    width: 440px;
+}
+.card-text-company{
+    font-size: large;
+    margin-top: 10px;
+}
+.act-company-img{
+    border-radius: 360px;
+    width: 290px;
+    height: 250px;
+    margin-left: 58px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.klik-company {
+    margin-top: 20px;
+    align-items: center;
+}
+
+@media (min-width: 768px){
+.company-panel{
+    background-color: #e0d7f6;
+    align-items: center;
+    border-radius: 10px;
+    height: 850px;
+    width: 440px;
+}
+
+.text-head-company{
+    text-align: center;
+    font-size:xx-large ;
+    font-style: oblique;
+    font-weight: bolder;
+}
+
+    .text-head-act{
+    text-align: center;
+    color: #531CB9;
+    padding: 30px;
+    font-size: xx-large ;
+    font-weight: bolder;
+}
+
+    .text-act{
+    padding-top: 20px;
+    text-align: center;
+    font-size: medium;
+    font-weight: bold;
+}
+
+    .company-img{
+    align-items: center;
+    width: 350px;
+    height: 350px;
+    margin-left: 170px;
+}
+
+    .act-company-img{
+    border-radius: 360px;
+    width: 220px;
+    height: 220px;
+    margin-left: 48px;
+    margin-top: 10px;
+}
+
+    .card-company {
+    background-color: #e0d7f6;
+    height: 310px;
+    width: 350px;
+}
+
+    .card-text-company{
+    font-size: large;
+    margin-top: 10px;
+}
+
+.text-company{
+    margin-top: 30px;
+}
+
+.klik-company {
+    margin-top: 20px;
+    align-items: center;
+}
+}
+
+@media (min-width: 991px){
+.company-panel{
+    background-color: #e0d7f6;
     align-items: center;
     border-radius: 10px;
     height: 500px;
     width: 440px;
 }
 
-.col-lg{
-    margin-top: 2rem;
+    .text-head-company{
+    text-align: left;
+    color: #531CB9;
+    font-size:xx-large ;
+    font-style: oblique;
+    font-weight: bolder;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 10px;
 }
 
-.head{
+    .text-head-act{
+    text-align: center;
     color: #531CB9;
-    text-align: left;
-    padding: 10px;
-    margin-left: 30px;
-    font-size:xx-large ;
+    padding: 30px;
+    font-size: xx-large ;
     font-weight: bolder;
 }
 
-p{
-    text-align: left;
-    padding: 5px;
+    .company-img{
+    align-items: left;
+    width: 350px;
+    height: 350px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+    
+.text-company{
+    margin-top: 130px;
     font-size: medium;
+    margin-left: -50px;
 }
 
-.btn{
-    align-items: center;
-    padding: 5px;
-}
-
-.card-text{
-    font-size: large;
-}
-
-.act-img{
+.act-company-img{
+    border-radius: 360px;
+    width: 300px;
     height: 260px;
-    width: 410px;
+    margin-left: 53px;
+    margin-top: 10px;
+}
+
+    .card-company {
+    background-color: #e0d7f6;
+    height: 350px;
+    width: 440px;
+}
+
+    .card-text-company{
+    font-size: large;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.klik-company {
+    margin-top: 20px;
+    align-items: center;
+}
+
 }

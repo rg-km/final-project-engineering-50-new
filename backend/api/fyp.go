@@ -11,10 +11,10 @@ type FypListErrorResponse struct {
 }
 
 type ListFyp struct {
-	Id            string `json:"id"`
-	PenjelasanFyp string `json:"penjelasan_fyp"`
-	BookletFyp    string `json:"booklet_fyp"`
-	InfoFyp       string `json:"info_fyp`
+	Id             string `json:"id"`
+	PenjelasanFyp  string `json:"penjelasan_fyp"`
+	BookletFyplist string `json:"booklet_fyplist"`
+	InfoFyp        string `json:"info_fyp"`
 }
 
 type FypListSuccessResponse struct {
@@ -39,10 +39,10 @@ func (a *API) getFyp(w http.ResponseWriter, r *http.Request) {
 	}
 	for _, b := range fyp {
 		response.Fyp = append(response.Fyp, ListFyp{
-			Id:            strconv.Itoa(int(b.Id)),
-			PenjelasanFyp: b.PenjelasanFyp,
-			BookletFyp:    b.BookletFyp,
-			InfoFyp:       b.InfoFyp,
+			Id:             strconv.Itoa(int(b.Id)),
+			PenjelasanFyp:  b.PenjelasanFyp,
+			BookletFyplist: b.BookletFyplist,
+			InfoFyp:        b.InfoFyp,
 		})
 	}
 
@@ -69,10 +69,10 @@ func (a *API) getFypById(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	response.Fyp = append(response.Fyp, ListFyp{
-		Id:            strconv.Itoa(int(fyp.Id)),
-		PenjelasanFyp: fyp.PenjelasanFyp,
-		BookletFyp:    fyp.BookletFyp,
-		InfoFyp:       fyp.InfoFyp,
+		Id:             strconv.Itoa(int(fyp.Id)),
+		PenjelasanFyp:  fyp.PenjelasanFyp,
+		BookletFyplist: fyp.BookletFyplist,
+		InfoFyp:        fyp.InfoFyp,
 	})
 	encoder.Encode(response)
 }
