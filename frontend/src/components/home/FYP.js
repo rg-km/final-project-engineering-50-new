@@ -11,9 +11,10 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from "axios";
+import useStore from "../../useStore";
 
 const FYP = () => {
-
+    const user = useStore((state) => state.user);
   const [show, setShow] = useState(false);
   const [motivasi, setMotivasi] = useState('');
   const [errorMotivasi, setErrorMotivasi] = useState('');
@@ -32,7 +33,12 @@ const FYP = () => {
   }
   const submitDaftar = (e) =>{
     const data ={
-      motivasi:motivasi
+      motivasi:motivasi,
+        name: user.name,
+        phone: user.phone,
+        ttl: user.ttl,
+        address: user.address,
+        education: user.education,
     }
     //console.log(data)
     if(!motivasi){
@@ -52,7 +58,6 @@ const FYP = () => {
          setError(e.response.data.message)
        })
     }
-    
   }
 
   return (
@@ -67,8 +72,8 @@ const FYP = () => {
             <div className='text-fyp col-lg-7 col-md-12 text-center'>
             Kalian pernah gak sih mengalami kebingungan dalam berkembang?<br/>
               Diumur yang sudah tidak muda lagi kita semua pasti pernah dihadapi dengan situasi yang sulit dalam memilih passion yang biasa kita kenal dengan <i>quarter life crisis</i>.
-              <br/>Nah! Bagi kalian yang masih bingung dan belum menemukan solusinya, AIMPROVE menawarkan solusi berupa konsultasi career dalam project <i>Find Your Path</i>, 
-              disini kalian akan mendapatkan banyak sekali informasi seperti magang dimana, organisasi apa yang harus diikuti, seminar apa yang bisa jadi bekal bagus buat kalian kedepannya, 
+              <br/>Nah! Bagi kalian yang masih bingung dan belum menemukan solusinya, AIMPROVE menawarkan solusi berupa konsultasi career dalam project <i>Find Your Path</i>,
+              disini kalian akan mendapatkan banyak sekali informasi seperti magang dimana, organisasi apa yang harus diikuti, seminar apa yang bisa jadi bekal bagus buat kalian kedepannya,
               dan masih banyak lagi yang bisa didapetin untuk mencari tahu awal langkah kita loh.<br/>
               <b>Ayo segera daftarkan diri kamu !!</b>
 

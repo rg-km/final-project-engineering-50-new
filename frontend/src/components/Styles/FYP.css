@@ -151,7 +151,7 @@
         font-weight: bolder;
         padding: 10px;
         margin-top: 20px;
-        margin-left: -10px;
+        margin-left: 10px;
     }
     .text-head-act{
         text-align: center;
@@ -180,8 +180,9 @@
     }
     
     .text-fyp{
-        margin-top: 120px;
-        font-size: medium;
+    margin-top: 130px;
+    font-size: medium;
+    margin-left: -50px;
     }
 
     .click-regist-fyp {

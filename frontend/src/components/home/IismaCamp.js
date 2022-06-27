@@ -1,5 +1,5 @@
-import React, { useState} from "react";
-import {useNavigate} from "react-router-dom";
+import React, {useState} from "react";
+import { Link } from "react-router-dom";
 import "../Styles/IISMA.css";
 import relation from "../Assets/iisma-relation.png";
 import tips from "../Assets/iisma-tips.png";
@@ -21,9 +21,7 @@ import useStore from "../../useStore"
 const IISMA = () => {
   const user = useStore((state) => state.user);
   const [show, setShow] = useState(false);
-  const [motivasi, setMotivasi] = useState('');
-  const [errorMotivasi, setErrorMotivasi] = useState('');
-  const [error, setError] = useState('');
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const navigate = useNavigate();
@@ -69,13 +67,6 @@ const IISMA = () => {
 
   return (
     <div className="container">
-      {
-        error && (
-            <div className='alert alert-danger'>
-                <p>{error}</p>
-            </div>
-        )
-      }
       <div className="row justify-content-center mt-4 mb-4">
         <div className="col-lg col-md iisma-panel">
           <div className="row">
