@@ -62,6 +62,13 @@ const FYP = () => {
 
   return (
     <div className="container">
+      {
+        error && (
+            <div className='alert alert-danger'>
+                <p>{error}</p>
+            </div>
+        )
+      }
       <div className="row justify-content-center mt-10 mb-4">
         <div className="col-lg col-md fyp-panel">
           <div className='row'>
